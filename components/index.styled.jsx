@@ -65,3 +65,5 @@ export const SocialIcons = styled.img`
     width: 40x;
     height: 40px;
 `;
+
+export default {};

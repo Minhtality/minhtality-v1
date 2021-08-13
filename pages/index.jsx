@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Particles from "../components/Particles";
-import * as Styled from './index.styled';
+import * as Styled from '../components/index.styled';
 
 export default function Home() {
 
@@ -48,7 +48,7 @@ export default function Home() {
         <Styled.Card>
           <Styled.CardContainer>
             <Styled.CardFront>
-              <Styled.Avatar src="https://media-exp1.licdn.com/dms/image/C4E03AQH3qBCPRsGTyA/profile-displayphoto-shrink_800_800/0/1575581866165?e=1634169600&v=beta&t=MiRljGvZ8bRmRuVCwqveciEL7v_LTPP1j3pesjQXYLc"/>
+              <Styled.Avatar loading="lazy" src="/images/avatar.jpg"/>
               <Styled.Name>Minh Tran</Styled.Name>
               <Styled.Title>Front-end Developer</Styled.Title>
               <Styled.Location>Los Angeles</Styled.Location>
