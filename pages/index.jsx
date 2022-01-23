@@ -27,17 +27,8 @@ export default function Home() {
     },
   ];
   return (
-    <div>
-      <Head>
-        <title>Minhtality</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap" rel="stylesheet"></link>
-      </Head>
       <div>
         Hello world
       </div>
-    </div>
   )
 };
