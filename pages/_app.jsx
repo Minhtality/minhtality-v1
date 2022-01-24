@@ -1,5 +1,6 @@
 import '../styles/global.css';
 import Head from 'next/dist/shared/lib/head';
+import Navigation from '../components/Navigation';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -12,7 +13,10 @@ export default function App({ Component, pageProps }) {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
       <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap" rel="stylesheet"></link>
     </Head>
-    <Component {...pageProps} />
+    <div>
+      <Navigation />
+      <Component {...pageProps} />
+    </div>
     </>
   )
 }
