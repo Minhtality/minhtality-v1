@@ -12,14 +12,16 @@ const Navigation = () => {
   };
 
   return (
-    <Styled.NavContainer>
-      <Styled.Heading>
-        <a href='/'>Minh Tran</a>
-      </Styled.Heading>
-      <Styled.Menu onClick={handleMenuClick}>
-        <HamburgerIcon isOpen={isOpen} />
-      </Styled.Menu>
-    </Styled.NavContainer>
+    <Styled.Header>
+      <Styled.NavContainer>
+        <Styled.Heading>
+          <a href='/'>Minh Tran</a>
+        </Styled.Heading>
+        <Styled.Menu onClick={handleMenuClick}>
+          <HamburgerIcon isOpen={isOpen} />
+        </Styled.Menu>
+      </Styled.NavContainer>
+    </Styled.Header>
   );
 };
 
