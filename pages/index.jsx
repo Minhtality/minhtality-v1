@@ -7,6 +7,8 @@ export default function Home() {
   return (
       <div>
         <SimpleGallery />
+        <SimpleGallery />
+        <SimpleGallery />
       </div>
   )
 };

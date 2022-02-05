@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Page = styled.div`
-    width: 100vw;
-    height: 100vh;
+    width: 100v%;
+    height: 100%;
     /* padding: 0 100px; */
     position: relative;
     box-sizing: border-box;

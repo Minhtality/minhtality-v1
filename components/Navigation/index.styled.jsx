@@ -1,19 +1,12 @@
 import styled from "styled-components";
 
-export const Header = styled.header`
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 2;
-`;
-
 export const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 50px 100px 50px 100px;
   margin-left: auto;
   margin-right: auto;
+  background: #fff;
 `;
 
 export const Heading = styled.div`

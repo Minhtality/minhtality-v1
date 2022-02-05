@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import * as Styled from './index.styled';
+import Sticky from 'react-sticky-el';
 
 const Navigation = () => {
   const [isOpen, setOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navigation = () => {
   };
 
   return (
-    <Styled.Header>
+  <Sticky isIOSFixEnabled={false} stickyStyle={{ zIndex: 5 }} style={{position: 'relative', zIndex: 4}}>
       <Styled.NavContainer>
         <Styled.Heading>
           <a href='/'>Minh Tran</a>
@@ -21,7 +22,7 @@ const Navigation = () => {
           <HamburgerIcon isOpen={isOpen} />
         </Styled.Menu>
       </Styled.NavContainer>
-    </Styled.Header>
+  </Sticky>
   );
 };
 
