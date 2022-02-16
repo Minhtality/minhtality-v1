@@ -7,6 +7,8 @@ export const NavContainer = styled.nav`
   margin-left: auto;
   margin-right: auto;
   background: #fff;
+  border: 1px solid rgb(226,226,226);
+  box-sizing: border-box;
 `;
 
 export const Heading = styled.div`

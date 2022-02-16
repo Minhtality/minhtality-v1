@@ -1,14 +1,72 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import SimpleGallery from '../components/SimpleGallery';
+import React from 'react';
+import * as Styled from '../Styles/index.styled';
+import Accordion from '../components/Accordion';
 
-export default function Home() {
-
+const index = () => {
+  const accordions = [
+  {
+    imageSrc: '',
+    title: 'App 1',
+    description: 'First application',
+    content: 'This is the accordion content'
+  },
+  {
+    imageSrc: '',
+    title: 'App 2',
+    description: 'Second application',
+    content: 'This is the accordion content 2'
+  },
+  {
+    imageSrc: '',
+    title: 'App 3',
+    description: 'Third application',
+    content: 'This is the accordion content 3'
+  },
+];
   return (
-      <div>
-        <SimpleGallery />
-        <SimpleGallery />
-        <SimpleGallery />
-      </div>
+    <main>
+      <Styled.Section>
+        <Styled.Container>
+          <span>darkmode</span>
+          <img src='/images/giphy.gif' />
+          <Styled.Heading>Hello, I'm Minh</Styled.Heading>
+          <Styled.Description>Front-end Developer, Los Angeles</Styled.Description>
+        </Styled.Container>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.Container>
+          <Styled.SubHead>Experience</Styled.SubHead>
+          {accordions.map((accordion, index) => (
+            <Accordion 
+              heading={accordion.title} 
+              description={accordion.description}
+              imgSrc={accordion.imageSrc}
+              >
+               <Styled.Test>Hello World: {index + 1}</Styled.Test>
+            </Accordion>
+          ))}
+        </Styled.Container>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.Container>
+          <Styled.SubHead>Portfolio</Styled.SubHead>
+          <div>Card</div>
+        </Styled.Container>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.Container>
+          <Styled.SubHead>Technologies</Styled.SubHead>
+          <div>Accolade here</div>
+        </Styled.Container>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.Container>
+          <Styled.SubHead>Contact Me</Styled.SubHead>
+          <div>Lets's work together</div>
+        </Styled.Container>
+      </Styled.Section>
+    </main>
   )
-};
+}
+
+export default index;

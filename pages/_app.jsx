@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }) {
       <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap" rel="stylesheet"></link>
     </Head>
     <div>
-      <Navigation />
+      {/* <Navigation /> */}
       <Component {...pageProps} />
     </div>
     </>
