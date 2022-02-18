@@ -21,6 +21,10 @@ export const SubHead = styled.h2`
     text-align: left;
    
 `;
+export const ExperienceList = styled.ul`
+    margin: 0;
+    padding: 0;
+`;
 export const Test = styled.div`
     border-bottom: 1px solid rgb(226,226,226);
     margin-bottom: 15px;

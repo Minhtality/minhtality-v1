@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const AccordionContainer = styled.li`
+    list-style: none;
+`;
+
 export const Accordion = styled.div`
     width: 100%;
     /* border: 1px solid #333; */
@@ -21,7 +25,20 @@ export const Icon = styled.div`
     border-radius: 12px;
     margin-right: 15px;
 `;
-
+export const Close = styled.button`
+    margin-left: auto;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    transform: rotate(-90deg);
+    align-self: center;
+    border: none;
+    background: transparent;
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+`;
 export const AccordionContent = styled.div`
     max-height: ${({ show }) => show ? '600vh' : '0vh'};
     opacity: ${({ show }) => show ? '1' : '0'};

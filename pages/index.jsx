@@ -30,21 +30,23 @@ const index = () => {
           <span>darkmode</span>
           <img src='/images/giphy.gif' />
           <Styled.Heading>Hello, I'm Minh</Styled.Heading>
-          <Styled.Description>Front-end Developer, Los Angeles</Styled.Description>
+          <Styled.Description>Front-End Developer, Los Angeles</Styled.Description>
         </Styled.Container>
       </Styled.Section>
       <Styled.Section>
         <Styled.Container>
           <Styled.SubHead>Experience</Styled.SubHead>
-          {accordions.map((accordion, index) => (
-            <Accordion 
-              heading={accordion.title} 
-              description={accordion.description}
-              imgSrc={accordion.imageSrc}
-              >
-               <Styled.Test>Hello World: {index + 1}</Styled.Test>
-            </Accordion>
-          ))}
+          <Styled.ExperienceList>
+            {accordions.map((accordion, index) => (
+                <Accordion 
+                  heading={accordion.title} 
+                  description={accordion.description}
+                  imgSrc={accordion.imageSrc}
+                  >
+                  <Styled.Test>Hello World: {index + 1}</Styled.Test>
+                </Accordion>
+            ))}
+          </Styled.ExperienceList>
         </Styled.Container>
       </Styled.Section>
       <Styled.Section>
