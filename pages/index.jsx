@@ -1,5 +1,5 @@
 import React from 'react';
-import * as Styled from '../Styles/index.styled';
+import * as Styled from './index.styled';
 import Accordion from '../components/Accordion';
 
 const index = () => {

@@ -1,4 +1,3 @@
-import '../Styles/global.css';
 import Head from 'next/dist/shared/lib/head';
 import Navigation from '../components/Navigation';
 import { useState } from 'react';
