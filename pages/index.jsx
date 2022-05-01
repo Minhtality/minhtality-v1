@@ -24,7 +24,7 @@ const index = () => {
   },
 ];
   return (
-    <main>
+    <Styled.Main>
       <Styled.Section>
         <Styled.Container>
           <img src='/images/giphy.gif' />
@@ -66,7 +66,7 @@ const index = () => {
           <div>Lets's work together</div>
         </Styled.Container>
       </Styled.Section>
-    </main>
+    </Styled.Main>
   )
 }
 

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-
+export const Main = styled.main`
+    padding: 0 20px 100px 20px;
+`;
 export const Section = styled.section`
     padding-top: 25px;
 `;
