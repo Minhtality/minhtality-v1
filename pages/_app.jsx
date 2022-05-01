@@ -1,8 +1,35 @@
 import '../Styles/global.css';
 import Head from 'next/dist/shared/lib/head';
 import Navigation from '../components/Navigation';
+import { useState } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme, GlobalStyles } from './ThemeConfig';
+import { DarkIcon, LightIcon } from '../public/icons';
+
+const ToggleTheme = styled.button`
+/* Look into animating svg */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  svg {
+    ${({ theme }) => theme === 'light' ? `
+      fill: #fff;
+      stroke: #363537;` : 
+      `
+      fill:#fafafa;
+      stroke: #fafafa`};
+    stroke-width: 2px;
+  }
+`;
 
 export default function App({ Component, pageProps }) {
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light')
+  };
+
   return (
     <>
       <Head>
@@ -15,7 +42,11 @@ export default function App({ Component, pageProps }) {
     </Head>
     <div>
       {/* <Navigation /> */}
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+        <GlobalStyles />
+        <ToggleTheme theme={theme} onClick={toggleTheme}>{theme === 'light' ? <DarkIcon/> : <LightIcon/>}</ToggleTheme>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </div>
     </>
   )

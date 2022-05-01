@@ -27,7 +27,6 @@ const index = () => {
     <main>
       <Styled.Section>
         <Styled.Container>
-          <span>darkmode</span>
           <img src='/images/giphy.gif' />
           <Styled.Heading>Hello, I'm Minh</Styled.Heading>
           <Styled.Description>Front-End Developer, Los Angeles</Styled.Description>
@@ -43,7 +42,7 @@ const index = () => {
                   description={accordion.description}
                   imgSrc={accordion.imageSrc}
                   >
-                  <Styled.Test>Hello World: {index + 1}</Styled.Test>
+                  <Styled.AccordionContent>Hello World: {index + 1}</Styled.AccordionContent>
                 </Accordion>
             ))}
           </Styled.ExperienceList>

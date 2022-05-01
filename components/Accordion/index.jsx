@@ -24,7 +24,7 @@ const Accordion = ({
                     <Styled.Heading>{heading}</Styled.Heading>
                     <Styled.Description>{description}</Styled.Description>
                 </div>
-                    <Styled.Close><Arrow fill="#000"/></Styled.Close>
+                    <Styled.Close><Arrow /></Styled.Close>
             </Styled.Accordion>
             <Styled.AccordionContent show={open}>
                 {children}
