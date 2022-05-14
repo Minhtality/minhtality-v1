@@ -11,6 +11,7 @@ const ToggleTheme = styled.button`
   top: 10px;
   right: 10px;
   background: transparent;
+  cursor: pointer;
   svg {
     ${({ theme }) => theme === 'light' ? `
       fill: #fff;
@@ -43,7 +44,7 @@ export default function App({ Component, pageProps }) {
       {/* <Navigation /> */}
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
-        <ToggleTheme theme={theme} onClick={toggleTheme}>{theme === 'light' ? <DarkIcon/> : <LightIcon/>}</ToggleTheme>
+        <ToggleTheme theme={theme} onClick={toggleTheme} aria-label="theme toggle">{theme === 'light' ? <DarkIcon/> : <LightIcon/>}</ToggleTheme>
         <Component {...pageProps} />
       </ThemeProvider>
     </div>
