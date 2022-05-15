@@ -1,12 +1,9 @@
-import React from 'react';
-import PDFViewer from '../components/PDFViewer';
+import dynamic from "next/dynamic";
 
-const resume = () => {
-  return (
-    <div>
-      <PDFViewer />
-    </div>
-  )
+const PDFViewer = dynamic(() => import("../components/PDFViewer"), {
+  ssr: false
+});
+
+export default function PDF() {
+  return <PDFViewer />;
 }
-
-export default resume

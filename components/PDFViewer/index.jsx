@@ -1,11 +1,41 @@
-import React from 'react';
+import { useState } from "react";
+import * as Styled from './index.styled';
+// import default react-pdf entry
+import { Document, Page, pdfjs } from "react-pdf";
+// import pdf worker as a url, see `next.config.js` and `pdf-worker.js`
+import workerSrc from "../../pdf-worker"
 
-const index = () => {
+pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
+
+export default function PDFViewer() {
+  const [file, setFile] = useState("./assets/resume.pdf");
+  const [numPages, setNumPages] = useState(null);
+
+  function onFileChange(event) {
+    setFile(event.target.files[0]);
+  }
+
+  function onDocumentLoadSuccess({ numPages: nextNumPages }) {
+    setNumPages(nextNumPages);
+  }
+
   return (
-    <div style={{height: '100vh', width: '100%', overflow:'hidden'}}>
-      <iframe src="/assets/resume.pdf#toolbar=0&navpanes=0&scrollbar=0" width={'100%'} height={'100%'}></iframe>
-    </div>
-  )
+    <Styled.PDFContainer>
+      {/* <div>
+        <label htmlFor="file">Load from file:</label>{" "}
+        <input onChange={onFileChange} type="file" />
+      </div> */}
+        <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+          {Array.from({ length: numPages }, (_, index) => (
+            <Page
+              key={`page_${index + 1}`}
+              pageNumber={index + 1}
+              renderAnnotationLayer={false}
+              renderTextLayer={false}
+              scale={2}
+            />
+          ))}
+        </Document>
+    </Styled.PDFContainer>
+  );
 }
-
-export default index
