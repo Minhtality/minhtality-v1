@@ -19,7 +19,7 @@ const ToggleTheme = styled.button`
       `
       fill:#fafafa;
       stroke: #fafafa`};
-    stroke-width: 2px;
+    strokeWidth: 2px;
   }
 `;
 

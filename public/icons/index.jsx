@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const Arrow = ({ title = 'Arrow Icon', ...props }) =>
+export const Arrow = ({ title = 'arrow icon', ...props }) =>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 13.39 7.45"
-    ariaLabeledBy="title"
     {...props}
   >
     <title>{title}</title>
@@ -13,12 +12,12 @@ export const Arrow = ({ title = 'Arrow Icon', ...props }) =>
   </svg>;
 
 export const DarkIcon = ({ title = 'Dark Icon', ...props }) =>
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-moon">
   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
 </svg>
 
 export const LightIcon = ({ title = 'Light Icon', ...props }) =>
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-sun">
   <circle cx="12" cy="12" r="5"></circle>
   <line x1="12" y1="1" x2="12" y2="3"></line>
   <line x1="12" y1="21" x2="12" y2="23"></line>

@@ -38,6 +38,7 @@ const index = () => {
           <Styled.ExperienceList>
             {accordions.map((accordion, index) => (
                 <Accordion 
+                  key={index}
                   heading={accordion.title} 
                   description={accordion.description}
                   imgSrc={accordion.imageSrc}
