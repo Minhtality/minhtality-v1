@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Styled from './index.styled';
 import Accordion from '../components/Accordion';
+import { ReactIcon, HtmlIcon, StyledComPonentIcon } from '../public/icons';
 
 const index = () => {
   const accordions = [
@@ -23,6 +24,12 @@ const index = () => {
     content: 'This is the accordion content 3'
   },
 ];
+
+const iconStyle = {
+  width: '50px',
+  height: '50px'
+};
+
   return (
     <Styled.Main>
       <Styled.Section>
@@ -58,7 +65,11 @@ const index = () => {
       <Styled.Section>
         <Styled.Container>
           <Styled.SubHead>Technologies</Styled.SubHead>
-          <div>Accolade here</div>
+          <div>
+            <ReactIcon {...iconStyle}/>
+            <HtmlIcon {...iconStyle}/>
+            <StyledComPonentIcon {...iconStyle}/>
+          </div>
         </Styled.Container>
       </Styled.Section>
       <Styled.Section>
