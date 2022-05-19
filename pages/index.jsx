@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from './index.styled';
 import Accordion from '../components/Accordion';
-import { ReactIcon, HtmlIcon, StyledComPonentIcon } from '../public/icons';
+import { ReactIcon, CssIcon, HtmlIcon, StyledComPonentIcon } from '../public/icons';
 
 const index = () => {
   const accordions = [
@@ -67,6 +67,7 @@ const iconStyle = {
           <Styled.SubHead>Technologies</Styled.SubHead>
           <div>
             <ReactIcon {...iconStyle}/>
+            <CssIcon {...iconStyle}/>
             <HtmlIcon {...iconStyle}/>
             <StyledComPonentIcon {...iconStyle}/>
           </div>
