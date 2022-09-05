@@ -7,7 +7,7 @@ export const accordionsMock = [
         description: "April 2022 - Present",
         content: `
             <h4>Internal Portal Tool for Sales Team to Manage Clients' Projects</h4>
-            <p>I'm currently working on a tool that allows the sales team to manage their clients' projects. The tool is built with <a target="_blank" href="https://reactjs.org/">ReactJS</a>, <a href="https://rubyonrails.org/" target="_blank">Ruby on Rails</a>, <a href="https://www.postgresql.org/" target"_blank">PostgreSQL</a>, and <a href="https://mui.com/" target"_blank">Material-ui</a>.</p>
+            <p>I'm currently working on a tool that allows the sales team to manage their clients' projects. The tool is built with <a target="_blank" href="https://reactjs.org/">ReactJS</a>, <a href="https://rubyonrails.org/" target="_blank">Ruby on Rails</a>, <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>, and <a href="https://mui.com/" target"_blank">Material-ui</a>.</p>
             <p>Some of the features I've worked on include:
                 <ul>
                     <li>Built and implemented multi-factor authentication with Twilio and Google Authenticator for the new user onboarding process.</li>
