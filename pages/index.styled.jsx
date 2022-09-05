@@ -19,6 +19,7 @@ export const Container = styled.div`
 `;
 export const Heading = styled.h1`
     margin: 0;
+    margin-bottom: 10px;
 `;
 export const SubHead = styled.h2`
     text-align: left;
@@ -46,5 +47,16 @@ export const IconContainer = styled.div`
     max-width: 640px;
     svg {
         margin: 0 20px;
+    }
+`;
+
+export const SkillList = styled.ul`
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    list-style: none;
+    text-align: left;
+    li {
+        margin: 0 0 10px 0;
     }
 `;
