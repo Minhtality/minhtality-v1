@@ -37,3 +37,14 @@ export const AccordionContent = styled.div`
 export const Description = styled.p`
     margin: 0;
 `;
+
+export const IconContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 640px;
+    svg {
+        margin: 0 20px;
+    }
+`;

@@ -20,18 +20,17 @@ export const Description = styled.p``;
 export const Icon = styled.a`
     width: 100px;
     height: 100px;
-    /* border: 1px solid #333; */
+    border: 1px solid rgb(226,226,226);
     border-radius: 12px;
     margin-right: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
+
     img {
         width: 100%;
         height: 100%;
         object-fit: contain;
-    }
-    svg {
     }
 `;
 export const Close = styled.button`

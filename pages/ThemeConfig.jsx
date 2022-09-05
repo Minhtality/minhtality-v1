@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
   }
   svg {
     fill: ${({ theme }) => theme.color};

@@ -1,7 +1,15 @@
 import React from 'react';
 import * as Styled from './index.styled';
 import Accordion from '../components/Accordion';
-import { ReactIcon, CssIcon, HtmlIcon, StyledComPonentIcon } from '../public/icons';
+import { 
+  ReactIcon,
+  CssIcon,
+  HtmlIcon,
+  StyledComPonentIcon,
+  MaterialUiIcon,
+  RubyIcon,
+  NextJsIcon
+} from '../public/icons';
 import { accordionsMock } from './_mocks';
 import parse from 'html-react-parser';
 
@@ -39,21 +47,24 @@ const iconStyle = {
           </Styled.ExperienceList>
         </Styled.Container>
       </Styled.Section>
-      <Styled.Section>
+      {/* <Styled.Section>
         <Styled.Container>
           <Styled.SubHead>Portfolio</Styled.SubHead>
           <div>Card</div>
         </Styled.Container>
-      </Styled.Section>
+      </Styled.Section> */}
       <Styled.Section>
         <Styled.Container>
           <Styled.SubHead>Technologies</Styled.SubHead>
-          <div>
+          <Styled.IconContainer>
             <ReactIcon {...iconStyle}/>
             <CssIcon {...iconStyle}/>
             <HtmlIcon {...iconStyle}/>
             <StyledComPonentIcon {...iconStyle}/>
-          </div>
+            <MaterialUiIcon {...iconStyle}/>
+            <NextJsIcon {...iconStyle}/>
+            <RubyIcon {...iconStyle}/>
+          </Styled.IconContainer>
         </Styled.Container>
       </Styled.Section>
       <Styled.Section>
