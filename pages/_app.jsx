@@ -24,14 +24,23 @@ const ToggleTheme = styled.button`
   }
 `;
 
+const useIsMounted = () => {
+  const isMounted = useRef(false);
+  useEffect(() => {
+    isMounted.current = true;
+    return () => isMounted.current = false;
+  }, []);
+  return isMounted;
+};
+
 export default function App({ Component, pageProps }) {
   const [theme, setTheme] = useState('light');
-
+  const isMounted = useIsMounted();
 
   useEffect(() => {
     const localTheme = localStorage.getItem('theme');
     setTheme(localTheme);
-  }, []);
+  }, [isMounted]);
 
 
   const toggleTheme = () => {
@@ -56,7 +65,7 @@ export default function App({ Component, pageProps }) {
     <div>
       {/* <Navigation /> */}
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        <GlobalStyles />
+        <GlobalStyles isMounted={isMounted} />
         <ToggleTheme theme={theme} onClick={toggleTheme} aria-label="theme toggle">{theme === 'light' ? <DarkIcon/> : <LightIcon/>}</ToggleTheme>
         <Component {...pageProps} />
       </ThemeProvider>

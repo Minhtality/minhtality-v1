@@ -65,3 +65,8 @@ export const CssIcon = ({title = 'Css Icon', ...props}) =>
   <path d="M62.468 129.275V12.085l51.064.17-9.106 104.85z" fill="#1c88c7"/>
   <path d="M100.851 27.064H22.298l2.128 15.318h37.276l-36.68 15.745 2.127 14.808h54.043l-1.958 20.68-18.298 3.575-16.595-4.255-1.277-11.745H27.83l2.042 24.426 32.681 9.106 31.32-9.957 4-47.745H64.765l36.085-14.978z" fill="#fff"/>
 </SVG>
+
+export const LexusIcon = ({title = 'Lexus Icon', ...props}) =>
+<SVG {...props} xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+  <path fill="#2b2a29" d="M256 94c27 0 54 3 78 9-27 39-80 113-104 146l-8 10s-33 46 29 46h183c5-13 7-27 7-41 0-59-42-110-102-135 6-7 11-14 14-20 82 27 140 86 140 155 0 25-8 49-21 71H204s-86-1-42-76c36-62 85-125 102-146h-10c-103 0-187 68-187 152s84 152 187 152c65 0 123-27 156-69h52c-41 52-119 87-208 87-132 0-238-76-238-170S123 95 254 95z"/>
+</SVG>

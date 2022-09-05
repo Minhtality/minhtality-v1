@@ -14,11 +14,12 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.color};
-    transition: all 0.50s linear;
-    
+    transition: ${({ isMounted }) => isMounted ? 'all 1s linear' : 'none'};
+    /* transition: all 0.25s linear; */
     padding: 0;
     margin: 0;
     font-family: 'Raleway', sans-serif;
+    overflow: hidden;
   }
   svg {
     fill: ${({ theme }) => theme.color};

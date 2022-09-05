@@ -6,7 +6,6 @@ export const AccordionContainer = styled.li`
 
 export const Accordion = styled.div`
     width: 100%;
-    /* border: 1px solid #333; */
     cursor: pointer;
     text-align: left;
     display: flex;
@@ -18,12 +17,22 @@ export const Heading = styled.h3`
     margin: 0;
 `;
 export const Description = styled.p``;
-export const Icon = styled.div`
+export const Icon = styled.a`
     width: 100px;
     height: 100px;
-    border: 1px solid #333;
+    /* border: 1px solid #333; */
     border-radius: 12px;
     margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    svg {
+    }
 `;
 export const Close = styled.button`
     margin-left: auto;
@@ -31,6 +40,9 @@ export const Close = styled.button`
     width: 20px;
     height: 20px;
     transform: rotate(-90deg);
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    transform: ${({ show }) => show ? 'rotate(0deg)' : 'rotate(-90deg)'};
     align-self: center;
     border: none;
     background: transparent;
@@ -46,6 +58,13 @@ export const AccordionContent = styled.div`
     perspective: 9999px;
     transform: ${({show}) => show ? 'translate3d(0, 0, 0)' : 'translate3d(0, -10px, 0)'};
     transform-style: preserve-3d;
-    transition: all .5s ease;
+    transition: all .7s ease;
     text-align: left;
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+    li {
+        margin-bottom: 10px;
+    }
 `;

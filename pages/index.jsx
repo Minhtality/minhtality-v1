@@ -3,6 +3,7 @@ import * as Styled from './index.styled';
 import Accordion from '../components/Accordion';
 import { ReactIcon, CssIcon, HtmlIcon, StyledComPonentIcon } from '../public/icons';
 import { accordionsMock } from './_mocks';
+import parse from 'html-react-parser';
 
 const index = () => {
 
@@ -30,8 +31,9 @@ const iconStyle = {
                   heading={accordion.title} 
                   description={accordion.description}
                   imgSrc={accordion.imageSrc}
+                  href={accordion.href}
                   >
-                  <Styled.AccordionContent>Hello World: {index + 1}</Styled.AccordionContent>
+                  <Styled.AccordionContent>{parse(accordion.content)}</Styled.AccordionContent>
                 </Accordion>
             ))}
           </Styled.ExperienceList>
