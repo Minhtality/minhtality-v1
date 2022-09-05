@@ -1,3 +1,4 @@
+import React, { useEffect, useRef } from 'react';
 import Head from 'next/dist/shared/lib/head';
 import Navigation from '../components/Navigation';
 import { useState } from 'react';
@@ -26,8 +27,21 @@ const ToggleTheme = styled.button`
 export default function App({ Component, pageProps }) {
   const [theme, setTheme] = useState('light');
 
+
+  useEffect(() => {
+    const localTheme = localStorage.getItem('theme');
+    setTheme(localTheme);
+  }, []);
+
+
   const toggleTheme = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light')
+    theme === 'light' ? (
+      setTheme('dark'),
+      localStorage.setItem('theme', 'dark')
+    ) : (
+      setTheme('light'),
+      localStorage.setItem('theme', 'light')
+    )
   };
 
   return (

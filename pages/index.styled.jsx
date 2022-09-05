@@ -11,9 +11,10 @@ export const Container = styled.div`
     max-width: 640px;
     margin: 0 auto;
     img {
-        width: 100px;
-        height: 100px;
+        width: 125px;
+        height: 125px;
         border-radius: 50%;
+        object-fit: cover;
     }
 `;
 export const Heading = styled.h1`

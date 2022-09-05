@@ -2,28 +2,9 @@ import React from 'react';
 import * as Styled from './index.styled';
 import Accordion from '../components/Accordion';
 import { ReactIcon, CssIcon, HtmlIcon, StyledComPonentIcon } from '../public/icons';
+import { accordionsMock } from './_mocks';
 
 const index = () => {
-  const accordions = [
-  {
-    imageSrc: '',
-    title: 'App 1',
-    description: 'First application',
-    content: 'This is the accordion content'
-  },
-  {
-    imageSrc: '',
-    title: 'App 2',
-    description: 'Second application',
-    content: 'This is the accordion content 2'
-  },
-  {
-    imageSrc: '',
-    title: 'App 3',
-    description: 'Third application',
-    content: 'This is the accordion content 3'
-  },
-];
 
 const iconStyle = {
   width: '50px',
@@ -34,16 +15,16 @@ const iconStyle = {
     <Styled.Main>
       <Styled.Section>
         <Styled.Container>
-          <img src='/images/giphy.gif' />
+          <img src='/images/avatar.jpg' />
           <Styled.Heading>Hello, I'm Minh</Styled.Heading>
-          <Styled.Description>Front-End Developer, Los Angeles</Styled.Description>
+          <Styled.Description>Front End Developer, Los Angeles</Styled.Description>
         </Styled.Container>
       </Styled.Section>
       <Styled.Section>
         <Styled.Container>
           <Styled.SubHead>Experience</Styled.SubHead>
           <Styled.ExperienceList>
-            {accordions.map((accordion, index) => (
+            {accordionsMock.map((accordion, index) => (
                 <Accordion 
                   key={`accordion: ${index}`}
                   heading={accordion.title} 
