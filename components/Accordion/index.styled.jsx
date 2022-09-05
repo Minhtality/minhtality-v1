@@ -28,7 +28,7 @@ export const Icon = styled.a`
     justify-content: center;
 
     img {
-        width: 100%;
+        min-width: 100%;
         height: 100%;
         object-fit: contain;
     }
