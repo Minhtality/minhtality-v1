@@ -1,11 +1,48 @@
 import React, { useEffect, useRef } from 'react';
 import Head from 'next/dist/shared/lib/head';
-import Navigation from '../components/Navigation';
 import { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme, GlobalStyles } from './ThemeConfig';
 import { DarkIcon, LightIcon } from '../public/icons';
+import { createGlobalStyle } from "styled-components"
+//TODO: currently hook not working
+const useIsMounted = () => {
+  const isMounted = useRef(false);
+  useEffect(() => {
+    isMounted.current = true;
+    return () => isMounted.current = false;
+  }, []);
+  return isMounted;
+};
 
+const lightTheme = {
+  body: 'rgb(242,242,242)',
+  color: '#363537',
+}
+
+const darkTheme = {
+  body: 'rgb(32,33,36)',
+  color: '#FAFAFA',
+}
+
+const GlobalStyles = createGlobalStyle`
+  body {
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.color};
+    transition: ${({ isMounted }) => isMounted ? 'all .7s linear' : 'none'};
+    /* transition: all 0.25s linear; */
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+  }
+  svg {
+    fill: ${({ theme }) => theme.color};
+  }
+  button {
+    border: none;
+    padding: 0;
+  }
+`
 const ToggleTheme = styled.button`
 /* Look into animating svg */
   position: fixed;
@@ -24,15 +61,6 @@ const ToggleTheme = styled.button`
   }
 `;
 
-const useIsMounted = () => {
-  const isMounted = useRef(false);
-  useEffect(() => {
-    isMounted.current = true;
-    return () => isMounted.current = false;
-  }, []);
-  return isMounted;
-};
-
 export default function App({ Component, pageProps }) {
   const [theme, setTheme] = useState('light');
   const isMounted = useIsMounted();
@@ -40,7 +68,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     const localTheme = localStorage.getItem('theme');
     setTheme(localTheme);
-  }, [isMounted]);
+  }, []);
 
 
   const toggleTheme = () => {
