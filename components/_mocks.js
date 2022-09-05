@@ -22,7 +22,7 @@ export const accordionsMock = [
         imageSrc: "/images/Lexus-Logo.png",
         href: "https://www.lexus.com/",
         title: "Lexus Drivers",
-        description: "Mar 2020 - Apr 2022",
+        description: "Jan 2022 - Apr 2022",
         content: `
             <h4>Extend Reusable Components to Build Lexus Drivers Site</h4>
             <p>Kickoff <a target="_blank" href="https://drivers.lexus.com/lexusdrivers">Lexus Drivers</a> site migration to utilize the platform's reusable components. This will allow for faster development and more consistent user experience across the Lexus.com site.</p>
@@ -33,7 +33,7 @@ export const accordionsMock = [
         imageSrc: "/images/Lexus-Logo.png",
         href: "https://www.lexus.mx/",
         title: "Lexus Mexico",
-        description: "Mar 2020 - Mar 2022",
+        description: "Oct 2021 - Jan 2022",
         content: `
             <h4>Extend Reusable Components to Build lexus.mx</h4>
             <p>After the success of the Lexus USA website, the content team was able to quickly build the <a href="https://www.lexus.mx/" target="_blank">lexus.mx</a> site, leveraging the components built for Lexus USA. I also built a new data provider component wrapper to support unique features between MX and USA.</p>
@@ -43,7 +43,7 @@ export const accordionsMock = [
         imageSrc: "/images/Lexus-Logo.png",
         href: "https://www.lexus.com/",
         title: "Lexus | Site Migration to ReactJS",
-        description: "Mar 2020 - Mar 2022",
+        description: "Mar 2020 - Jun 2021",
         content: `
             <h4>Full Site Migration with CSM Integration</h4>
             <p>After the Model Page re-design pitch, this project kicks off to fully migrate the entire <a target="_blank" href="https://www.lexus.com/">lexus.com</a>  from from a legacy codebase of over 700k line of code over to React components.</p>
