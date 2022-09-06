@@ -50,6 +50,7 @@ const AccordionContent = styled.div`
     border-bottom: 1px solid rgb(226,226,226);
     margin-bottom: 15px;
     padding-bottom: 15px;
+    font-size: 14px;
 `;
 
 const Description = styled.p`
@@ -75,6 +76,9 @@ const SkillList = styled.ul`
     text-align: left;
     li {
         margin: 0 0 10px 0;
+    }
+    b {
+      text-decoration: underline;
     }
 `;
 
