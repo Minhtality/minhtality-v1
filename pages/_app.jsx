@@ -4,15 +4,6 @@ import { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { DarkIcon, LightIcon } from '../public/icons';
 import { createGlobalStyle } from "styled-components"
-//TODO: currently hook not working
-const useIsMounted = () => {
-  const isMounted = useRef(false);
-  useEffect(() => {
-    isMounted.current = true;
-    return () => isMounted.current = false;
-  }, []);
-  return isMounted;
-};
 
 const lightTheme = {
   body: 'rgb(242,242,242)',
@@ -28,8 +19,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.color};
-    transition: ${({ isMounted }) => isMounted ? 'all .7s linear' : 'none'};
-    /* transition: all 0.25s linear; */
+    transition: all 0.75s linear;
     padding: 0;
     margin: 0;
     font-family: 'Raleway', sans-serif;
@@ -44,7 +34,6 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 const ToggleTheme = styled.button`
-/* Look into animating svg */
   position: fixed;
   top: 10px;
   right: 10px;
@@ -63,7 +52,6 @@ const ToggleTheme = styled.button`
 
 export default function App({ Component, pageProps }) {
   const [theme, setTheme] = useState('light');
-  const isMounted = useIsMounted();
 
   useEffect(() => {
     const localTheme = localStorage.getItem('theme');
@@ -93,7 +81,7 @@ export default function App({ Component, pageProps }) {
     <div>
       {/* <Navigation /> */}
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        <GlobalStyles isMounted={isMounted} />
+        <GlobalStyles />
         <ToggleTheme theme={theme} onClick={toggleTheme} aria-label="theme toggle">{theme === 'light' ? <DarkIcon/> : <LightIcon/>}</ToggleTheme>
         <Component {...pageProps} />
       </ThemeProvider>
