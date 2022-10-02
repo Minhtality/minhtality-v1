@@ -17,5 +17,8 @@ module.exports = {
     });
 
     return config;
-  }
+  },
+  env: {
+    TDA_CLIENT_ID: process.env.TDA_CLIENT_ID,
+},
 };
