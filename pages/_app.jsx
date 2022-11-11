@@ -34,6 +34,11 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-family: 'Raleway', sans-serif;
     overflow-x: hidden;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  body::-webkit-scrollbar {
+    display: none;
   }
   svg {
     fill: ${({ theme }) => theme.color};

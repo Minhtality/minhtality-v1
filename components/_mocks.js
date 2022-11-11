@@ -1,10 +1,26 @@
 export const accordionsMock = [
     {
+        imageSrc: "/images/ng.png",
+        fallBackImageSrc: "/images/ng.png",
+        title: "Northrop Grumman",
+        href: "https://www.northropgrumman.com/",
+        description: "Oct 2022 - Present",
+        content: `
+            <h4>Design System for USAF and USN</h4>
+            <p>Currently collaborating with System Designers to create a unified solution to streamline style guide updates and interactive component documentation via Storybook.</p>
+            <p>Technologies and skills:
+                <ul>
+                    <li>Material-UI, ReactJS, Web Designs, User Interface Design, User Experience (UX), Accessibility, devops</li>
+                </ul>
+            </p>
+        `,
+    },
+    {
         imageSrc: "/images/ll.png",
         fallBackImageSrc: "/images/ll.png",
-        title: "Lemonlight Media ",
+        title: "Lemonlight Media",
         href: "https://www.lemonlight.com/",
-        description: "April 2022 - Present",
+        description: "April 2022 - Oct 2022",
         content: `
             <h4>Internal Portal Tool for Sales Team to Manage Clients' Projects</h4>
             <p>I'm currently working on a tool that allows the sales team to manage their clients' projects. The tool is built with <a target="_blank" href="https://reactjs.org/">ReactJS</a>, <a href="https://rubyonrails.org/" target="_blank">Ruby on Rails</a>, <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>, and <a href="https://mui.com/" target="_blank">Material-ui</a>.</p>
