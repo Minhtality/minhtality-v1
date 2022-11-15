@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const AccordionContainer = styled.li`
     list-style: none;
+    scroll-margin-top: 15px;
 `;
 
 export const Accordion = styled.div`

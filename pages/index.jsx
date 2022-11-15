@@ -33,6 +33,7 @@ const Avatar = styled.img`
     width: 150px;
     height: 150px;
     object-fit: cover;
+    margin-bottom: 10px;
 `;
 const Heading = styled.h1`
     margin: 0;
@@ -93,7 +94,7 @@ const iconStyle = {
     <Main>
       <Section>
         <Container>
-          <Avatar src='/images/avatar.jpg' />
+          <Avatar src='/images/avatar.jpeg' />
           <Heading>Hello, I'm Minh</Heading>
           <Description>Front End Developer, Los Angeles</Description>
         </Container>
