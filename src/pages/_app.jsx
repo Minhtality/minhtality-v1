@@ -1,18 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/dist/shared/lib/head';
 import { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-// import { DarkIcon, LightIcon } from '../../public/icons';
+import { DarkIcon, LightIcon } from '../../public/icons';
 import { createGlobalStyle } from "styled-components"
 //TODO: currently hook not working
-const useIsMounted = () => {
-  const isMounted = useRef(false);
-  useEffect(() => {
-    isMounted.current = true;
-    return () => isMounted.current = false;
-  }, []);
-  return isMounted;
-};
 
 const lightTheme = {
   body: 'rgb(242,242,242)',
@@ -28,8 +20,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.color};
-    transition: ${({ isMounted }) => isMounted ? 'all .7s linear' : 'none'};
-    /* transition: all 0.25s linear; */
+    /* transition: ${({ isMounted }) => isMounted ? 'all .7s linear' : 'none'}; */
+    transition: all 0.25s linear;
     padding: 0;
     margin: 0;
     font-family: 'Raleway', sans-serif;
@@ -68,7 +60,6 @@ const ToggleTheme = styled.button`
 
 export default function App({ Component, pageProps }) {
   const [theme, setTheme] = useState('light');
-  const isMounted = useIsMounted();
 
   useEffect(() => {
     const localTheme = localStorage.getItem('theme');
@@ -98,8 +89,8 @@ export default function App({ Component, pageProps }) {
     <div>
       {/* <Navigation /> */}
       <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-        <GlobalStyles isMounted={isMounted} />
-        {/* <ToggleTheme theme={theme} onClick={toggleTheme} aria-label="theme toggle">{theme === 'light' ? <DarkIcon/> : <LightIcon/>}</ToggleTheme> */}
+        <GlobalStyles />
+        <ToggleTheme theme={theme} onClick={toggleTheme} aria-label="theme toggle">{theme === 'light' ? <DarkIcon/> : <LightIcon/>}</ToggleTheme>
         <Component {...pageProps} />
       </ThemeProvider>
     </div>
