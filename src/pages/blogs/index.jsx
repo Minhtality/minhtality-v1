@@ -1,3 +1,4 @@
+import React from 'react';
 import fs from 'fs'
 import * as path from 'path'
 import matter from 'gray-matter'
@@ -16,10 +17,10 @@ export const index = ({posts}) => {
 export default index;
 
 export const getStaticProps = async () => {
-    const files = fs.readdirSync(path.join(process.cwd(), 'posts'))
+    const files = fs.readdirSync(path.join('src', 'posts'))
     const posts = files.map(filename => {
         const markdownWithMeta = fs.readFileSync(path
-            .join('posts', filename))
+            .join('src','posts', filename))
         const {data:frontmatter} = matter(markdownWithMeta)
         
         return {

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Head from 'next/dist/shared/lib/head';
 import { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { DarkIcon, LightIcon } from '../public/icons';
+// import { DarkIcon, LightIcon } from '../../public/icons';
 import { createGlobalStyle } from "styled-components"
 //TODO: currently hook not working
 const useIsMounted = () => {

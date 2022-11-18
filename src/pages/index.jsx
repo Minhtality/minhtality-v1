@@ -11,7 +11,7 @@ import {
   GithubIcon,
   LinkedInIcon,
   GmailIcon
-} from '../public/icons';
+} from '../../public/icons';
 import { accordionsMock } from '../components/_mocks';
 import parse from 'html-react-parser';
 

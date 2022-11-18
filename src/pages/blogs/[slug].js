@@ -1,8 +1,9 @@
+import React from 'react';
 import fs from 'fs'
-import path from 'path'
+import * as path from 'path'
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize' 
-import MDXRemote from 'next-mdx-remote'
+import { MDXRemote } from 'next-mdx-remote'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
 const components = {SyntaxHighlighter}
@@ -16,12 +17,13 @@ const PostPage = ({ frontmatter, mdxSource }) => {
         </div>
     )
 }
+export default PostPage
 
-const getStaticPaths = async () => {
-    const files = fs.readdirSync(path.join(process.cwd(),'posts'))
+export const getStaticPaths = async () => {
+    const files = fs.readdirSync(path.join('src','posts'))
     const paths = files.map(filename => ({
         params: {
-            slug: filename.replace('.md', '')
+            slug: filename.replace('.mdx', '')
         }
     }))
     return {
@@ -30,11 +32,10 @@ const getStaticPaths = async () => {
     }
 }
 
-const getStaticProps = async ({ params: { slug } }) => {
+export const getStaticProps = async ({ params: { slug } }) => {
     const markdownWithMeta = fs.readFileSync(
-        path.join('posts', slug + '.md'))
+        path.join('src','posts', slug + '.mdx'))
     const { data: frontmatter, content } = matter(markdownWithMeta)
-    console.log(content)
     const mdxSource = await serialize(content)
     return {
         props: {
@@ -44,6 +45,3 @@ const getStaticProps = async ({ params: { slug } }) => {
         }
     }
 }
-
-export { getStaticPaths, getStaticProps }
-export default PostPage

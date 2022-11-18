@@ -356,6 +356,14 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@mdx-js/loader@^2.1.5", "@mdx-js/loader@>=0.15.0":
+  "integrity" "sha512-oXjfTa/iAcMmW8DdQ+hQFodPCLqw5VKT2yoZkLwrZfPVVpUgKrI+5/ZePYq328xxtAUStZmR3ed0PWJrwd5Pkg=="
+  "resolved" "https://registry.npmjs.org/@mdx-js/loader/-/loader-2.1.5.tgz"
+  "version" "2.1.5"
+  dependencies:
+    "@mdx-js/mdx" "^2.0.0"
+    "source-map" "^0.7.0"
+
 "@mdx-js/mdx@^2.0.0":
   "integrity" "sha512-zEG0lt+Bl/r5U6e0TOS7qDbsXICtemfAPquxWFsMbdzrvlWaqMGemLl+sjVpqlyaaiCiGVQBSGdCk0t1qXjkQg=="
   "resolved" "https://registry.npmjs.org/@mdx-js/mdx/-/mdx-2.1.5.tgz"
@@ -379,7 +387,7 @@
     "unist-util-visit" "^4.0.0"
     "vfile" "^5.0.0"
 
-"@mdx-js/react@^2.0.0":
+"@mdx-js/react@*", "@mdx-js/react@^2.0.0":
   "integrity" "sha512-3Az1I6SAWA9R38rYjz5rXBrGKeZhq96CSSyQtqY+maPj8stBsoUH5pNcmIixuGkufYsh8F5+ka2CVPo2fycWZw=="
   "resolved" "https://registry.npmjs.org/@mdx-js/react/-/react-2.1.5.tgz"
   "version" "2.1.5"
@@ -396,6 +404,13 @@
   "integrity" "sha512-zPJkMFRenSf7BLlVee8987G0qQXAhxy7k+Lb/5hLAGkPVHAHm+oFFeL+2ipbI2KTEFlazdmGY0M+AlLQn7pWaw=="
   "resolved" "https://registry.npmjs.org/@next/env/-/env-11.1.0.tgz"
   "version" "11.1.0"
+
+"@next/mdx@^13.0.4":
+  "integrity" "sha512-eKmn8YC5nSBwcvjxBi5X9F+4L0p5+YMJcLXZXaAkfXbjxO1mMpj+EpMn2EINNPIGCRKTypZfZaJgvrxuU8a72g=="
+  "resolved" "https://registry.npmjs.org/@next/mdx/-/mdx-13.0.4.tgz"
+  "version" "13.0.4"
+  dependencies:
+    "source-map" "^0.7.0"
 
 "@next/polyfill-module@11.1.0":
   "integrity" "sha512-64EgW8SzJRQls2yJ5DkuljRxgE24o2kYtX/ghTkPUJYsfidHMWzQGwg26IgRbb/uHqTd1G0W5UkKag+Nt8TWaQ=="
@@ -3880,7 +3895,7 @@
   "resolved" "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.2.3.tgz"
   "version" "3.2.3"
 
-"webpack@^4 || ^5", "webpack@^5.1.0":
+"webpack@^4 || ^5", "webpack@^5.1.0", "webpack@>=4":
   "integrity" "sha512-A2InDwnhhGN4LYctJj6M1JEaGL7Luj6LOmyBHjcI8529cm5p6VXiTIW2sn6ffvEAKmveLzvu4jrihwXtPojlAA=="
   "resolved" "https://registry.npmjs.org/webpack/-/webpack-5.74.0.tgz"
   "version" "5.74.0"
