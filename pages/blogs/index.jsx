@@ -1,20 +1,25 @@
 import fs from 'fs'
 import * as path from 'path'
 import matter from 'gray-matter'
+import Link from 'next/link'
 
 export const index = ({posts}) => {
     return (
-        <div>{JSON.stringify(posts)}</div>
+        <div>
+            {posts.map((post, index) => (
+               <div>{JSON.stringify(post)}</div>
+            ))}
+        </div>
     )
 }
 
 export default index;
 
 export const getStaticProps = async () => {
-    const files = fs.readdirSync(path.join('posts'))
+    const files = fs.readdirSync(path.join(process.cwd(), 'posts'))
     const posts = files.map(filename => {
         const markdownWithMeta = fs.readFileSync(path
-            .join('posts', filename), 'utf-8')
+            .join('posts', filename))
         const {data:frontmatter} = matter(markdownWithMeta)
         
         return {
