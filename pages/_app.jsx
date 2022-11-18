@@ -97,9 +97,9 @@ export default function App({ Component, pageProps }) {
       </Head>
     <div>
       {/* <Navigation /> */}
-      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
         <GlobalStyles isMounted={isMounted} />
-        <ToggleTheme theme={theme} onClick={toggleTheme} aria-label="theme toggle">{theme === 'light' ? <DarkIcon/> : <LightIcon/>}</ToggleTheme>
+        {/* <ToggleTheme theme={theme} onClick={toggleTheme} aria-label="theme toggle">{theme === 'light' ? <DarkIcon/> : <LightIcon/>}</ToggleTheme> */}
         <Component {...pageProps} />
       </ThemeProvider>
     </div>
