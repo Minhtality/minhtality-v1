@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import * as Styled from './index.styled';
-import { Arrow, LexusIcon } from '../../public/icons/index';
+import { Arrow } from '../../../public/icons';
 
 const Accordion = ({
     heading = 'default heading',
