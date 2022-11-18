@@ -20,7 +20,6 @@ const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.color};
-    /* transition: ${({ isMounted }) => isMounted ? 'all .7s linear' : 'none'}; */
     transition: all 0.25s linear;
     padding: 0;
     margin: 0;
