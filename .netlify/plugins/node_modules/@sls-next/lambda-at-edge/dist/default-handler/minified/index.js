@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),require("./prerender-manifest.json"),require("./manifest.json"),require("./routes-manifest.json");var e=require("./default-handler-1d169422.js");require("perf_hooks"),require("stream"),require("zlib"),require("http"),require("buffer"),require("util"),require("crypto"),exports.handler=e.handler;
