@@ -1,10 +1,6 @@
 import Accordion from './index';
-export default {
-    title: 'Accordion',
-    component: Accordion, 
-}
 
-const mocks =  {
+const _mocks =  {
     imgSrc: "https://via.placeholder.com/150x150?text=NG",
     fallBackImageSrc: "https://via.placeholder.com/150/Text=NG",
     heading: "Accordion Heading",
@@ -22,14 +18,21 @@ const mocks =  {
     `,
 }
 
+export default {
+    title: 'Components/Accordion',
+    component: Accordion, 
+}
+
+
 const template = (arg) => {
     return (
         <Accordion {...arg} />
     )
 }
+export const Default = () => <Accordion {..._mocks} />
 
-export const Default = template.bind({});
+export const Playground = template.bind({});
 
-Default.args = {
-    ...mocks
+Playground.args = {
+    ..._mocks,
 }
