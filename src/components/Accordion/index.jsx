@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import * as Styled from './index.styled';
 import { Arrow } from '../../../public/icons';
+import parse from 'html-react-parser';
+
 
 const Accordion = ({
     heading = 'default heading',
@@ -8,6 +10,7 @@ const Accordion = ({
     imgSrc = '',
     href = '',
     children,
+    ...props
 }) => {
     const [open, setOpen] = useState(false);
     const accordionRef = useRef();
@@ -33,7 +36,7 @@ const Accordion = ({
                     <Styled.Close show={open}><Arrow /></Styled.Close>
             </Styled.Accordion>
             <Styled.AccordionContent show={open}>
-                {children}
+                {children || parse(props.content)}
             </Styled.AccordionContent>
         </Styled.AccordionContainer>
     )

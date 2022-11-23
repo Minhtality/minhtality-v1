@@ -27,6 +27,7 @@ export const Icon = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
     img {
         min-width: 100%;
