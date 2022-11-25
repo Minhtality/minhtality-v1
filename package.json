@@ -8,7 +8,7 @@
 		"start": "next start",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
+		"prettier-format": "prettier --config .prettierrc --write \"**/*.{js,jsx,ts,tsx,css,scss,md}\""
 	},
 	"dependencies": {
 		"@mdx-js/loader": "^2.1.5",
