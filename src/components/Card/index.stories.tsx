@@ -4,8 +4,8 @@ import Card from './index'
 const _mocks = {
     title: 'Card title',
     description: 'Card description',
-    thumbnail: 'https://picsum.photos/200/300',
-    avatar: 'https://picsum.photos/200/300',
+    thumbnail: 'https://picsum.photos/1000/1500',
+    avatar: 'https://picsum.photos/1000/1500',
     author: 'Author',
     date: '2021-01-01',
     tags: ['tag1', 'tag2', 'tag3'],
