@@ -16,7 +16,7 @@ const darkTheme = {
   color: '#FAFAFA',
 }
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.color};

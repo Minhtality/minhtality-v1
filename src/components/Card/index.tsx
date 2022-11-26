@@ -10,9 +10,9 @@ interface CardProps {
     tags: string[];
 }
 
-const index = ({ title, description, thumbnail, date }: CardProps) => {
-    let dateFormat = new Date(date);
-    let day = dateFormat.toLocaleDateString("en-US", {
+const index = ({ title, description, thumbnail, date, author }: CardProps) => {
+    const dateFormat = new Date(date);
+    const day = dateFormat.toLocaleDateString("en-US", {
         day: "numeric",
         month: "short",
         year: "numeric",
@@ -24,6 +24,7 @@ const index = ({ title, description, thumbnail, date }: CardProps) => {
             </Styled.ThumbnailContainer>
             <p>{title}</p>
             <p>{description}</p>
+            <p>{author}</p>
             <Styled.Date>{day}</Styled.Date>
         </Styled.Card>
     );

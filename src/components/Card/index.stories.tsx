@@ -6,7 +6,7 @@ const _mocks = {
     description: "Card description",
     thumbnail: "https://picsum.photos/1000/1500",
     avatar: "https://picsum.photos/1000/1500",
-    author: "Author",
+    author: "Minh Tran",
     date: "11/25/2022",
     tags: ["tag1", "tag2", "tag3"],
 };
