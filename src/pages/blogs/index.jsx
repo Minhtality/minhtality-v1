@@ -8,7 +8,7 @@ export const index = ({posts}) => {
     return (
         <div>
             {posts.map((post, index) => (
-               <div>{JSON.stringify(post)}</div>
+               <div key={index}>{JSON.stringify(post)}</div>
             ))}
         </div>
     )
