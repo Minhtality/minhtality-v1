@@ -14,7 +14,6 @@ import {
 } from '../../public/icons';
 import { accordionsMock } from '../components/_mocks';
 import parse from 'html-react-parser';
-
 import styled from "styled-components";
 
 const Main = styled.main`

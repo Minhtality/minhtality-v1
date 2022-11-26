@@ -3,12 +3,21 @@ import fs from 'fs'
 import * as path from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
+import Card from '../../components/Card'
 
 export const index = ({posts}) => {
     return (
         <div>
             {posts.map((post, index) => (
-               <div key={index}>{JSON.stringify(post)}</div>
+                <Link href={`/blogs/${post.slug}`} key={index}>
+                <Card 
+                    key={index}
+                    title={post.frontmatter.title}
+                    author={post.frontmatter.author}
+                    date={post.frontmatter.date}
+                    thumbnail={post.frontmatter.thumbnail}
+                />
+                </Link>
             ))}
         </div>
     )
