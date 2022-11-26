@@ -10,12 +10,22 @@ interface CardProps {
     tags: string[];
 }
 
-const index = ({ title, description }: CardProps) => {
+const index = ({ title, description, thumbnail, date }: CardProps) => {
+    let dateFormat = new Date(date);
+    let day = dateFormat.toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+    });
     return (
-        <div>
-            <h1>{title}</h1>
+        <Styled.Card>
+            <Styled.ThumbnailContainer>
+                <Styled.Thumbnail src={thumbnail} alt="thumbnail" />
+            </Styled.ThumbnailContainer>
+            <p>{title}</p>
             <p>{description}</p>
-        </div>
+            <Styled.Date>{day}</Styled.Date>
+        </Styled.Card>
     );
 };
 
