@@ -2,13 +2,12 @@ import React from "react";
 import Card from "./index";
 
 const _mocks = {
-    title: "Card title",
-    description: "Card description",
+    title: "Create A Polaroid Card with CSS",
     thumbnail: "https://picsum.photos/1000/1500",
     avatar: "https://picsum.photos/1000/1500",
     author: "Minh Tran",
     date: "11/25/2022",
-    tags: ["tag1", "tag2", "tag3"],
+    tags: ["React", "Blog", "CSS"],
 };
 
 export default {
