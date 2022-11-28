@@ -10,6 +10,8 @@ export const Card = styled.div`
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
+    color: #333;
     font-family: "Cedarville Cursive", cursive;
     p {
         margin: 0;
