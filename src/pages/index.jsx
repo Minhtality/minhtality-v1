@@ -155,7 +155,7 @@ const iconStyle = {
           <IconContainer>
             <a href="https://github.com/Minhtality" target="_blank"><GithubIcon {...iconStyle}/></a>
             <a href="https://www.linkedin.com/in/minh-m-tran/" target="_blank"><LinkedInIcon {...iconStyle}/></a>
-            <a href="mailto:mtran1712@gmail.com" target="_blank"><GmailIcon {...iconStyle}/></a>
+            <a href="mailto:dev@minhtality.com" target="_blank"><GmailIcon {...iconStyle}/></a>
           </IconContainer>
         </Container>
       </Section>
