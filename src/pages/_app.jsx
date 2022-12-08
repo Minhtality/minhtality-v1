@@ -4,7 +4,6 @@ import { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { DarkIcon, LightIcon } from "../../public/icons";
 import { createGlobalStyle } from "styled-components";
-//TODO: currently hook not working
 
 const lightTheme = {
     body: "rgb(242,242,242)",
