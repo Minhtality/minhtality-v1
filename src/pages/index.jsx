@@ -1,20 +1,9 @@
-import React from 'react';
-import Accordion from '../components/Accordion';
-import { 
-  ReactIcon,
-  CssIcon,
-  HtmlIcon,
-  StyledComPonentIcon,
-  MaterialUiIcon,
-  RubyIcon,
-  NextJsIcon,
-  GithubIcon,
-  LinkedInIcon,
-  GmailIcon
-} from '../../public/icons';
-import { accordionsMock } from '../components/_mocks';
-import parse from 'html-react-parser';
+import React from "react";
+import * as Icons from "../../public/icons";
+import Accordion from "../components/Accordion";
+import parse from "html-react-parser";
 import styled from "styled-components";
+import { accordionsMock, iconsMock } from "../components/_mocks";
 
 const Main = styled.main`
     padding: 0 20px 100px 20px;
@@ -40,14 +29,13 @@ const Heading = styled.h1`
 `;
 const SubHead = styled.h2`
     text-align: left;
-   
 `;
 const ExperienceList = styled.ul`
     margin: 0;
     padding: 0;
 `;
 const AccordionContent = styled.div`
-    border-bottom: 1px solid rgb(226,226,226);
+    border-bottom: 1px solid rgb(226, 226, 226);
     margin-bottom: 15px;
     padding-bottom: 15px;
     font-size: 14px;
@@ -78,89 +66,105 @@ const SkillList = styled.ul`
         margin: 0 0 10px 0;
     }
     b {
-      text-decoration: underline;
+        text-decoration: underline;
     }
 `;
 
 const index = () => {
+    const iconStyle = {
+        width: "50px",
+        height: "50px",
+    };
 
-const iconStyle = {
-  width: '50px',
-  height: '50px'
+    return (
+        <Main>
+            <Section>
+                <Container>
+                    <Avatar src="/images/avatar.jpeg" />
+                    <Heading>Hello, I'm Minh</Heading>
+                    <Description>Front End Developer, Los Angeles</Description>
+                </Container>
+            </Section>
+            <Section>
+                <Container>
+                    <SubHead>Experience</SubHead>
+                    <ExperienceList>
+                        {accordionsMock.map((accordion) => (
+                            <Accordion
+                                key={`accordion: ${accordion.title}`}
+                                heading={accordion.title}
+                                description={accordion.description}
+                                imgSrc={accordion.imageSrc}
+                                href={accordion.href}
+                            >
+                                <AccordionContent>
+                                    {parse(accordion.content)}
+                                </AccordionContent>
+                            </Accordion>
+                        ))}
+                    </ExperienceList>
+                </Container>
+            </Section>
+            <Section>
+                <Container>
+                    <SubHead>Technologies</SubHead>
+                    <IconContainer>
+                        {iconsMock.map((icon) => {
+                            const Icon = Icons[icon];
+                            return <Icon {...iconStyle} key={icon} />;
+                        })}
+                    </IconContainer>
+                </Container>
+            </Section>
+            <Section>
+                <Container>
+                    <SubHead>Skills</SubHead>
+                    <SkillList>
+                        <li>
+                            <b>Languages:</b> JavaScript (ES6+), C#, Python,
+                            Ruby on Rails{" "}
+                        </li>
+                        <li>
+                            <b>Frameworks:</b> React, Next.js, Vue.js
+                        </li>
+                        <li>
+                            <b>Libraries:</b> Redux Toolkit, Redux Saga, Styled
+                            Components, Material UI, Storybook
+                        </li>
+                        <li>
+                            <b>Tools:</b> Git, GitHub, GitLab, Jira, Confluence,
+                            Trello, Figma, Adobe XD, Adobe Photoshop
+                        </li>
+                        <li>
+                            <b>Database:</b> PostgreSQL, SQL, MongoDB
+                        </li>
+                        <li>
+                            <b>Testing:</b> Jest, Storyshot
+                        </li>
+                    </SkillList>
+                </Container>
+            </Section>
+            <Section>
+                <Container>
+                    <SubHead>Contact Me</SubHead>
+                    <IconContainer>  
+                        <a href="https://github.com/Minhtality" target="_blank">
+                            <Icons.GithubIcon {...iconStyle} />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/minh-m-tran/"
+                            target="_blank"
+                        >
+                            <Icons.LinkedInIcon {...iconStyle} />
+                        </a>
+                        <a href="mailto:dev@minhtality.com" target="_blank">
+                            <Icons.GmailIcon {...iconStyle} />
+                        </a>
+                    </IconContainer>
+                </Container>
+            </Section>
+        </Main>
+    );
 };
-
-  return (
-    <Main>
-      <Section>
-        <Container>
-          <Avatar src='/images/avatar.jpeg' />
-          <Heading>Hello, I'm Minh</Heading>
-          <Description>Front End Developer, Los Angeles</Description>
-        </Container>
-      </Section>
-      <Section>
-        <Container>
-          <SubHead>Experience</SubHead>
-          <ExperienceList>
-            {accordionsMock.map((accordion, index) => (
-                <Accordion 
-                  key={`accordion: ${index}`}
-                  heading={accordion.title} 
-                  description={accordion.description}
-                  imgSrc={accordion.imageSrc}
-                  href={accordion.href}
-                  >
-                  <AccordionContent>{parse(accordion.content)}</AccordionContent>
-                </Accordion>
-            ))}
-          </ExperienceList>
-        </Container>
-      </Section>
-      {/* <Styled.Section>
-        <Styled.Container>
-          <Styled.SubHead>Portfolio</Styled.SubHead>
-          <div>Card</div>
-        </Styled.Container>
-      </Styled.Section> */}
-      <Section>
-        <Container>
-          <SubHead>Technologies</SubHead>
-          <IconContainer>
-            <ReactIcon {...iconStyle}/>
-            <CssIcon {...iconStyle}/>
-            <HtmlIcon {...iconStyle}/>
-            <StyledComPonentIcon {...iconStyle}/>
-            <MaterialUiIcon {...iconStyle}/>
-            <NextJsIcon {...iconStyle}/>
-            <RubyIcon {...iconStyle}/>
-          </IconContainer>
-        </Container>
-      </Section>
-      <Section>
-        <Container>
-          <SubHead>Skills</SubHead>
-          <SkillList>
-            <li><b>Languages:</b> JavaScript (ES6+), C#, Python, Ruby on Rails </li>
-            <li><b>Frameworks:</b> React, Next.js, Vue.js</li>
-            <li><b>Libraries:</b> Redux Toolkit, Redux Saga, Styled Components, Material UI, Storybook</li>
-            <li><b>Tools:</b> Git, GitHub, GitLab, Jira, Confluence, Trello, Figma, Adobe XD, Adobe Photoshop</li>
-            <li><b>Database:</b> PostgreSQL, SQL, MongoDB</li>
-            <li><b>Testing:</b> Jest, Storyshot</li>
-          </SkillList>
-        </Container>
-      </Section>
-      <Section>
-        <Container>
-          <SubHead>Contact Me</SubHead>
-          <IconContainer>
-            <a href="https://github.com/Minhtality" target="_blank"><GithubIcon {...iconStyle}/></a>
-            <a href="https://www.linkedin.com/in/minh-m-tran/" target="_blank"><LinkedInIcon {...iconStyle}/></a>
-            <a href="mailto:dev@minhtality.com" target="_blank"><GmailIcon {...iconStyle}/></a>
-          </IconContainer>
-        </Container>
-      </Section>
-    </Main>
-  )
-}
 
 export default index;

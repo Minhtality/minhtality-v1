@@ -1,3 +1,13 @@
+export const iconsMock = [
+        "ReactIcon",
+        "CssIcon",
+        "HtmlIcon",
+        "StyledComPonentIcon",
+        "MaterialUiIcon",
+        "RubyIcon",
+        "NextJsIcon",
+    ];
+
 export const accordionsMock = [
     {
         imageSrc: "/images/ng.png",
