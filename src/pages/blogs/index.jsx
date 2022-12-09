@@ -10,7 +10,11 @@ export const index = ({ posts }) => {
     return (
         <Styled.BlogContainer>
             {posts.map((post, index) => (
-                <Link href={`/blogs/${post.slug}`} key={index}>
+                <Link
+                    as={Styled.CardWrapper}
+                    href={`/blogs/${post.slug}`}
+                    key={index}
+                >
                     <Card
                         key={index}
                         title={post.frontmatter.title}

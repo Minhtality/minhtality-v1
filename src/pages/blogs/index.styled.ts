@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const CardWrapper = styled.a`
+    padding: 10px;
+`;
+
 export const BlogContainer = styled.div`
     display: flex;
     /* justify center on smaller viewport */
