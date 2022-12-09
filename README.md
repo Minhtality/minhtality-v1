@@ -1,5 +1,3 @@
-In the project directory, you can run:
-
 # Hello, I'm Minh 👋
 
 [![Linkedin Badge](https://img.shields.io/badge/-minhtran-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/minh-m-tran/)](https://www.linkedin.com/in/minh-m-tran/)
@@ -34,7 +32,8 @@ Welcome! I'm a front-end developer specialized in React. I'm addicted to coffee.
 -   Music
 
 ## Installation & Usage
-
+In the project directory, you can run:
+  
 ```bash
 yarn
 yarn dev
