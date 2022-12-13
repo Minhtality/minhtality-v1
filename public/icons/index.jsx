@@ -112,3 +112,15 @@ export const GmailIcon = ({title = 'Gmail Icon', ...props}) =>
 <SVG {...props} fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">
   <path d="M 5.5 7 C 3.019531 7 1 9.019531 1 11.5 L 1 11.925781 L 25 29 L 49 11.925781 L 49 11.5 C 49 9.019531 46.980469 7 44.5 7 Z M 6.351563 9 L 43.644531 9 L 25 22 Z M 1 14.027344 L 1 38.5 C 1 40.980469 3.019531 43 5.5 43 L 44.5 43 C 46.980469 43 49 40.980469 49 38.5 L 49 14.027344 L 43 18.296875 L 43 41 L 7 41 L 7 18.296875 Z"/>
 </SVG>
+
+export const TeamOneIcon = ({title = 'Team One Icon', ...props}) =>
+<SVG {...props}  version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 16.4 16.4">
+        <g>
+          <path class="pt0" d="M8.2,0C3.7,0,0,3.7,0,8.2v8.2h8.2c4.5,0,8.2-3.7,8.2-8.2C16.3,3.7,12.7,0,8.2,0z"></path>
+          <circle class="st0" cx="3.3" cy="8.2" r="0.9"></circle>
+          <circle class="st0" cx="5.7" cy="13" r="0.9"></circle>
+          <circle class="st0" cx="5.7" cy="10.6" r="0.9"></circle>
+          <circle class="st0" cx="5.7" cy="8.2" r="0.9"></circle>
+          <circle class="st0" cx="8.2" cy="8.2" r="0.9"></circle>
+        </g>
+</SVG>

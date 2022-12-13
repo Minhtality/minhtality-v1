@@ -27,6 +27,9 @@ export const GlobalStyles = createGlobalStyle`
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
   }
+  h4, h5, h6 {
+    margin: 0;
+  }
   a {
     text-decoration: none;
   }
@@ -104,13 +107,13 @@ export default function App({ Component, pageProps }) {
                     theme={theme === "dark" ? darkTheme : lightTheme}
                 >
                     <GlobalStyles />
-                    <ToggleTheme
+                    {/* <ToggleTheme
                         theme={theme}
                         onClick={toggleTheme}
                         aria-label="theme toggle"
                     >
                         {theme === "light" ? <DarkIcon /> : <LightIcon />}
-                    </ToggleTheme>
+                    </ToggleTheme> */}
                     <Component {...pageProps} />
                 </ThemeProvider>
             </div>
