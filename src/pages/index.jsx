@@ -125,7 +125,8 @@ const index = () => {
                             Ruby on Rails{" "}
                         </li>
                         <li>
-                            <b>Frameworks:</b> React, Next.js, Vue.js, TypeScript
+                            <b>Frameworks:</b> React, Next.js, Vue.js,
+                            TypeScript
                         </li>
                         <li>
                             <b>Libraries:</b> Redux Toolkit, Redux Saga, Styled
@@ -139,7 +140,8 @@ const index = () => {
                             <b>Database:</b> PostgreSQL, SQL, MongoDB
                         </li>
                         <li>
-                            <b>Testing:</b> Jest, Storyshot, React Testing Library
+                            <b>Testing:</b> Jest, Storyshot, React Testing
+                            Library
                         </li>
                     </SkillList>
                 </Container>
@@ -147,7 +149,7 @@ const index = () => {
             <Section>
                 <Container>
                     <SubHead>Contact Me</SubHead>
-                    <IconContainer>  
+                    <IconContainer>
                         <a href="https://github.com/Minhtality" target="_blank">
                             <Icons.GithubIcon {...iconStyle} />
                         </a>
