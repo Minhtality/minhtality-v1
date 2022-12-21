@@ -4,21 +4,23 @@ import * as path from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
 import Card from '../../components/Card'
+import { MobileBreakpoint, TabletBreakpoint } from '../../components/breakpoints';
 
 export const index = ({posts}) => {
     return (
         <div>
-            {posts.map((post, index) => (
-                <Link href={`/blogs/${post.slug}`} key={index}>
+            {posts.map(({frontmatter, slug}, index) => (
+                <Link href={`/blogs/${slug}`} key={index}>
                 <Card 
                     key={index}
-                    title={post.frontmatter.title}
-                    author={post.frontmatter.author}
-                    date={post.frontmatter.date}
-                    thumbnail={post.frontmatter.thumbnail}
+                    title={frontmatter.title}
+                    author={frontmatter.author}
+                    date={frontmatter.date}
+                    thumbnail={frontmatter.thumbnail}
                 />
                 </Link>
             ))}
+            <TabletBreakpoint>Hello</TabletBreakpoint>
         </div>
     )
 }
