@@ -1,20 +1,9 @@
 import React from "react";
+import * as Icons from "../../public/icons";
 import Accordion from "../components/Accordion";
-import {
-    ReactIcon,
-    CssIcon,
-    HtmlIcon,
-    StyledComPonentIcon,
-    MaterialUiIcon,
-    RubyIcon,
-    NextJsIcon,
-    GithubIcon,
-    LinkedInIcon,
-    GmailIcon,
-} from "../../public/icons";
-import { accordionsMock } from "../components/_mocks";
 import parse from "html-react-parser";
 import styled from "styled-components";
+import { accordionsMock, iconsMock } from "../components/_mocks";
 
 const Main = styled.main`
     padding: 0 20px 100px 20px;
@@ -100,9 +89,9 @@ const index = () => {
                 <Container>
                     <SubHead>Experience</SubHead>
                     <ExperienceList>
-                        {accordionsMock.map((accordion, index) => (
+                        {accordionsMock.map((accordion) => (
                             <Accordion
-                                key={`accordion: ${index}`}
+                                key={`accordion: ${accordion.title}`}
                                 heading={accordion.title}
                                 description={accordion.description}
                                 imgSrc={accordion.imageSrc}
@@ -116,23 +105,14 @@ const index = () => {
                     </ExperienceList>
                 </Container>
             </Section>
-            {/* <Styled.Section>
-        <Styled.Container>
-          <Styled.SubHead>Portfolio</Styled.SubHead>
-          <div>Card</div>
-        </Styled.Container>
-      </Styled.Section> */}
             <Section>
                 <Container>
                     <SubHead>Technologies</SubHead>
                     <IconContainer>
-                        <ReactIcon {...iconStyle} />
-                        <CssIcon {...iconStyle} />
-                        <HtmlIcon {...iconStyle} />
-                        <StyledComPonentIcon {...iconStyle} />
-                        <MaterialUiIcon {...iconStyle} />
-                        <NextJsIcon {...iconStyle} />
-                        <RubyIcon {...iconStyle} />
+                        {iconsMock.map((icon) => {
+                            const Icon = Icons[icon];
+                            return <Icon {...iconStyle} key={icon} />;
+                        })}
                     </IconContainer>
                 </Container>
             </Section>
@@ -145,7 +125,8 @@ const index = () => {
                             Ruby on Rails{" "}
                         </li>
                         <li>
-                            <b>Frameworks:</b> React, Next.js, Vue.js
+                            <b>Frameworks:</b> React, Next.js, Vue.js,
+                            TypeScript
                         </li>
                         <li>
                             <b>Libraries:</b> Redux Toolkit, Redux Saga, Styled
@@ -159,7 +140,8 @@ const index = () => {
                             <b>Database:</b> PostgreSQL, SQL, MongoDB
                         </li>
                         <li>
-                            <b>Testing:</b> Jest, Storyshot
+                            <b>Testing:</b> Jest, Storyshot, React Testing
+                            Library
                         </li>
                     </SkillList>
                 </Container>
@@ -169,16 +151,16 @@ const index = () => {
                     <SubHead>Contact Me</SubHead>
                     <IconContainer>
                         <a href="https://github.com/Minhtality" target="_blank">
-                            <GithubIcon {...iconStyle} />
+                            <Icons.GithubIcon {...iconStyle} />
                         </a>
                         <a
                             href="https://www.linkedin.com/in/minh-m-tran/"
                             target="_blank"
                         >
-                            <LinkedInIcon {...iconStyle} />
+                            <Icons.LinkedInIcon {...iconStyle} />
                         </a>
-                        <a href="mailto:mtran1712@gmail.com" target="_blank">
-                            <GmailIcon {...iconStyle} />
+                        <a href="mailto:dev@minhtality.com" target="_blank">
+                            <Icons.GmailIcon {...iconStyle} />
                         </a>
                     </IconContainer>
                 </Container>

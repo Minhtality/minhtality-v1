@@ -1,7 +1,3 @@
-In the project directory, you can run:
-
-### `yarn run dev` or `npm run dev`
-
 # Hello, I'm Minh 👋
 
 [![Linkedin Badge](https://img.shields.io/badge/-minhtran-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/minh-m-tran/)](https://www.linkedin.com/in/minh-m-tran/)
@@ -24,13 +20,27 @@ Welcome! I'm a front-end developer specialized in React. I'm addicted to coffee.
   <a href="https://www.mongodb.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> 
   <a href="https://nodejs.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> 
   <a href="https://www.python.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> 
-  <a href="https://vuejs.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40"/> </a> 
+  <a href="https://vuejs.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40"/> </a>
 
-#### 🧡 &nbsp;&nbsp;My passions and interests
+## 🧡 &nbsp;&nbsp;My passions and interests
 
-* Technology and software
-* Nature
-* Road Cycling
-* Photography
-* Gaming
-* Music
+-   Technology and software
+-   Nature
+-   Road Cycling
+-   Photography
+-   Gaming
+-   Music
+
+## Installation & Usage
+In the project directory, you can run:
+  
+```bash
+yarn
+yarn dev
+```
+
+## Tech Stack
+
+-   [Next.js](https://nextjs.org/)
+-   [Styled Components](https://styled-components.com/)
+-   [Storybook](https://storybook.js.org/)

@@ -3,24 +3,25 @@ import fs from "fs";
 import * as path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
-import Card from "@components/Card";
-import { MobileBreakpoint, TabletBreakpoint } from "@components/breakpoints";
+import Card from "../../components/Card";
+import * as Styled from "./index.styled";
 
 export const index = ({ posts }) => {
     return (
-        <div>
-            {posts.map(({ frontmatter, slug }, index) => (
-                <Link href={`/blogs/${slug}`} key={index}>
+        <Styled.BlogContainer>
+            {posts.map((post, index) => (
+                <Link href={`/blogs/${post.slug}`} key={index}>
                     <Card
                         key={index}
-                        title={frontmatter.title}
-                        author={frontmatter.author}
-                        date={frontmatter.date}
-                        thumbnail={frontmatter.thumbnail}
+                        title={post.frontmatter.title}
+                        author={post.frontmatter.author}
+                        date={post.frontmatter.date}
+                        tags={post.frontmatter.tags}
+                        thumbnail={post.frontmatter.thumbnail}
                     />
                 </Link>
             ))}
-        </div>
+        </Styled.BlogContainer>
     );
 };
 

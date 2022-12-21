@@ -4,7 +4,6 @@ import { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { DarkIcon, LightIcon } from "../../public/icons";
 import { createGlobalStyle } from "styled-components";
-//TODO: currently hook not working
 
 const lightTheme = {
     body: "rgb(242,242,242)",
@@ -17,27 +16,33 @@ const darkTheme = {
 };
 
 export const GlobalStyles = createGlobalStyle`
-    body {
-        background: ${({ theme }) => theme.body};
-        color: ${({ theme }) => theme.color};
-        transition: all 0.25s linear;
-        padding: 0;
-        margin: 0;
-        font-family: 'Raleway', sans-serif;
-        overflow-x: hidden;
-        -ms-overflow-style: none;  /* Internet Explorer 10+ */
-        scrollbar-width: none;  /* Firefox */
-    }
-    body::-webkit-scrollbar {
-        display: none;
-    }
-    svg {
-        fill: ${({ theme }) => theme.color};
-    }
-    button {
-        border: none;
-        padding: 0;
-    }
+  body {
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.color};
+    transition: all 0.25s linear;
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  h4, h5, h6 {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  svg {
+    fill: ${({ theme }) => theme.color};
+  }
+  button {
+    border: none;
+    padding: 0;
+  }
 `;
 const ToggleTheme = styled.button`
     /* Look into animating svg */
@@ -77,8 +82,27 @@ export default function App({ Component, pageProps }) {
         <>
             <Head>
                 <title>Minhtality</title>
+                <link rel="icon" href="/favicon.ico" />
+                <link
+                    rel="preconnect"
+                    href="https://fonts.googleapis.com"
+                ></link>
+                <link
+                    rel="preconnect"
+                    href="https://fonts.gstatic.com"
+                    crossOrigin="true"
+                ></link>
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap"
+                    rel="stylesheet"
+                ></link>
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap"
+                    rel="stylesheet"
+                ></link>
             </Head>
             <div>
+                {/* <Navigation /> */}
                 <ThemeProvider
                     theme={theme === "dark" ? darkTheme : lightTheme}
                 >
