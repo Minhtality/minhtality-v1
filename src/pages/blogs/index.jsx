@@ -3,8 +3,8 @@ import fs from 'fs'
 import * as path from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
-import Card from '../../components/Card'
-import { MobileBreakpoint, TabletBreakpoint } from '../../components/breakpoints';
+import Card from '@components/Card'
+import { MobileBreakpoint, TabletBreakpoint } from '@components/breakpoints';
 
 export const index = ({posts}) => {
     return (
@@ -20,7 +20,6 @@ export const index = ({posts}) => {
                 />
                 </Link>
             ))}
-            <TabletBreakpoint>Hello</TabletBreakpoint>
         </div>
     )
 }
