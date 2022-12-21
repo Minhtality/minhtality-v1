@@ -83,13 +83,13 @@ export default function App({ Component, pageProps }) {
                     theme={theme === "dark" ? darkTheme : lightTheme}
                 >
                     <GlobalStyles />
-                    <ToggleTheme
+                    {/* <ToggleTheme
                         theme={theme}
                         onClick={toggleTheme}
                         aria-label="theme toggle"
                     >
                         {theme === "light" ? <DarkIcon /> : <LightIcon />}
-                    </ToggleTheme>
+                    </ToggleTheme> */}
                     <Component {...pageProps} />
                 </ThemeProvider>
             </div>
