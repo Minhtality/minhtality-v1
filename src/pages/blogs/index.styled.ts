@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import breakpoints from "@components/breakpoints";
 
 export const BlogContainer = styled.div`
     display: flex;
-    /* justify center on smaller viewport */
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 50px;
-    margin-bottom: 50px;
+    ${breakpoints("desktop", "up")} {
+        flex-direction: row;
+    }
 `;

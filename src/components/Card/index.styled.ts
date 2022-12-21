@@ -13,6 +13,7 @@ export const Card = styled.div`
     text-decoration: none;
     color: #333;
     font-family: "Cedarville Cursive", cursive;
+    margin: 20px;
     p {
         margin: 0;
     }
