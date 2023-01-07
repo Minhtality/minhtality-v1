@@ -10,28 +10,38 @@ import React from "react";
 // }
 
 const index = () => {
-    const REDIRECT_URI = "http://localhost";
+    const REDIRECT_URI = "https://localhost:3000";
     const CONSUMER_ID = "1IFFH2FVMRIB3AIOYV5XYCWG7NNJLYAJ";
-    const tdAuth = async () => {
-        try {
-            // Replace YOUR_CLIENT_ID with your actual client ID
-            // Replace YOUR_REDIRECT_URI with your actual redirect URI
-            // Replace YOUR_API_KEY with your actual API key
-            const authUrl = `https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=http%3A%2F%2Flocalhost&client_id=${CONSUMER_ID}%40AMER.OAUTHAP`;
+    function login() {
+        // Replace {consumer_id} with your actual consumer ID
+        const loginUrl = `https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=${encodeURIComponent(
+            REDIRECT_URI
+        )}&client_id=${encodeURIComponent(CONSUMER_ID)}%40AMER.OAUTHAP`;
 
-            // Open the TD Ameritrade login page in a new window
-            window.open(authUrl, "_blank");
-        } catch (error) {
-            console.error(error);
-        }
-    };
+        // Open the login window
+        const loginWindow = window.open(loginUrl, "_blank");
+
+        // Poll for the login window to close
+        const interval = setInterval(() => {
+            if (loginWindow.closed) {
+                clearInterval(interval);
+
+                // Get the URL of the current window
+                const currentUrl = window.location.href;
+                // Get the code query parameter from the URL
+
+                // Save the code to local storage
+                localStorage.setItem("code", currentUrl);
+            }
+        }, 1000);
+    }
 
     // Call the tdAuth function to open the login page
 
     return (
         <div>
             <p>Hello world</p>
-            <button onClick={tdAuth}>Auth</button>
+            <button onClick={login}>Auth</button>
         </div>
     );
 };
