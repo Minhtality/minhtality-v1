@@ -1,5 +1,5 @@
 import React from "react";
-import { TDA_CLIENT_ID } from "@apis/config";
+import { TDA_CLIENT_ID, TDA_REFRESH_TOKEN } from "@apis/config";
 
 // interface CardProps {
 //     title: string;
@@ -11,8 +11,9 @@ import { TDA_CLIENT_ID } from "@apis/config";
 // }
 
 const index = () => {
-    const REDIRECT_URI = "https://localhost:3000";
-    const CONSUMER_ID = "";
+    const REDIRECT_URI = "http://localhost:3000";
+    const CONSUMER_ID = `${TDA_CLIENT_ID}`;
+    const REFRESH_TOKEN = TDA_REFRESH_TOKEN;
     function login() {
         // Replace {consumer_id} with your actual consumer ID
         const loginUrl = `https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=${encodeURIComponent(
@@ -37,12 +38,10 @@ const index = () => {
         }, 1000);
     }
 
-    // Call the tdAuth function to open the login page
-    console.log(TDA_CLIENT_ID);
     return (
         <div>
             <p>Hello world</p>
-            <button onClick={login}>Auth</button>
+            <button onClick={login}>Auth App</button>
         </div>
     );
 };
