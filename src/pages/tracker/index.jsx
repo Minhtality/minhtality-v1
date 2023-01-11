@@ -11,14 +11,16 @@ import { TDA_CLIENT_ID, TDA_REFRESH_TOKEN } from "@apis/config";
 // }
 
 const index = () => {
-    const REDIRECT_URI = "http://localhost:3000";
+    const REDIRECT_URI = "http://localhost";
     const CONSUMER_ID = `${TDA_CLIENT_ID}`;
     const REFRESH_TOKEN = TDA_REFRESH_TOKEN;
     function login() {
         // Replace {consumer_id} with your actual consumer ID
-        const loginUrl = `https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=${encodeURIComponent(
-            REDIRECT_URI
-        )}&client_id=${encodeURIComponent(CONSUMER_ID)}%40AMER.OAUTHAP`;
+        const loginUrl = new URL(
+            `https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=${encodeURIComponent(
+                REDIRECT_URI
+            )}&client_id=${encodeURIComponent(CONSUMER_ID)}%40AMER.OAUTHAP`
+        );
 
         // Open the login window
         const loginWindow = window.open(loginUrl, "_blank");
