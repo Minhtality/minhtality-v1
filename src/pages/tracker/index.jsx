@@ -23,7 +23,7 @@ const index = () => {
     };
 
     const getAccounts = async () => {
-        await fetch("https://api.tdameritrade.com/v1/accounts?fields=positions",
+        await fetch("https://api.tdameritrade.com/v1/accounts?fields=positions,orders",
             {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -52,7 +52,10 @@ const index = () => {
             <form onSubmit={submithandler}>
                 <input type="text" placeholder="Enter Auth Code" />
             </form>
-            <pre>{JSON.stringify(account, 0, 2)}</pre>
+            <div style={{display: 'flex'}}>
+                <pre>{JSON.stringify(account.positions, 0, 2)}</pre>
+                <pre>{JSON.stringify(account.orderStrategies, 0, 2)}</pre>
+            </div>
             <button onClick={loginTD}>Auth</button>
             <button onClick={getAccounts}>Get Accounts</button>
             {showSync && <button onClick={refreshAccessToken}>Sync</button>}
