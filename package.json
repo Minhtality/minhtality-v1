@@ -11,6 +11,7 @@
 		"prettier-format": "prettier --config .prettierrc --write \"**/*.{js,jsx,ts,tsx,css,scss,md}\""
 	},
 	"dependencies": {
+		"@knicola/tdameritrade": "^0.6.0",
 		"@mdx-js/loader": "^2.1.5",
 		"@next/mdx": "^13.0.4",
 		"@types/jest": "^29.2.3",

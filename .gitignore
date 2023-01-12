@@ -31,3 +31,7 @@ yarn-error.log*
 
 # Local Netlify folder
 netlify
+
+# Certificate
+selfsigned.crt
+selfsigned.key

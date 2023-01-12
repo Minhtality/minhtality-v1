@@ -1,49 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { TDA_CLIENT_ID, TDA_REFRESH_TOKEN } from "@apis/config";
-
-// interface CardProps {
-//     title: string;
-//     thumbnail?: string;
-//     avatar?: string;
-//     author: string;
-//     date: string;
-//     tags: string[];
-// }
+import { TDAmeritrade } from "@knicola/tdameritrade";
 
 const index = () => {
+    const [code, setCode] = useState("");
+
+    const td = new TDAmeritrade({
+        apiKey: TDA_CLIENT_ID,
+        redirectUri: "http://localhost",
+        sslKey: 'C:\Users\Minhtality\selfsigned.key',
+        sslCert: 'C:\Users\Minhtality\selfsigned.crt',
+    });
+
+    const getAccessToken = async (code) => {
+        const accessToken = await td.getAccessToken(decodeURIComponent(code));
+        localStorage.setItem('refreshToken', accessToken.refresh_token);
+        localStorage.setItem('accessToken', accessToken.access_token);
+    }
+
+    const getRefreshToken = async () => {
+        await td.getAccessToken(TDA_REFRESH_TOKEN);
+    }
+
+    const getAccounts = async () => {
+        let accounts = await fetch("https://api.tdameritrade.com/v1/accounts?fields=positions", {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+        }).then((res) => res.json()).then((data) => data[0]);
+
+        
+        console.log('acounts',accounts);
+    };
+
+    
     const REDIRECT_URI = "http://localhost";
     const CONSUMER_ID = `${TDA_CLIENT_ID}`;
-    const REFRESH_TOKEN = TDA_REFRESH_TOKEN;
     function login() {
-        // Replace {consumer_id} with your actual consumer ID
-        const loginUrl = new URL(
-            `https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=${encodeURIComponent(
-                REDIRECT_URI
-            )}&client_id=${encodeURIComponent(CONSUMER_ID)}%40AMER.OAUTHAP`
-        );
 
-        // Open the login window
+        const loginUrl = new URL(`https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&client_id=${encodeURIComponent(CONSUMER_ID)}%40AMER.OAUTHAP`);
         const loginWindow = window.open(loginUrl, "_blank");
+    }
 
-        // Poll for the login window to close
-        const interval = setInterval(() => {
-            if (loginWindow.closed) {
-                clearInterval(interval);
-
-                // Get the URL of the current window
-                const currentUrl = window.location.href;
-                // Get the code query parameter from the URL
-
-                // Save the code to local storage
-                localStorage.setItem("code", currentUrl);
-            }
-        }, 1000);
+    const submithandler = (e) => {
+        e.preventDefault();
+        const code = e.target[0].value;
+        setCode(code);
+        getAccessToken(code);
     }
 
     return (
         <div>
             <p>Hello world</p>
-            <button onClick={login}>Auth App</button>
+            <form onSubmit={submithandler}>
+                <input type="text" placeholder="Enter Auth Code" />
+            </form>
+            <button onClick={login}>Auth</button>
+            <button onClick={getAccounts}>Get Accounts</button>
         </div>
     );
 };
