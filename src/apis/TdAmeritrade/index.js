@@ -6,7 +6,7 @@ const CONSUMER_ID = `${TDA_CLIENT_ID}`;
 
 export const tdAmeritrade = new TDAmeritrade({
     redirectUri: REDIRECT_URI,
-    consumerId: CONSUMER_ID,
+    apiKey: CONSUMER_ID,
 });
 
 export const getAccessToken = async () => {

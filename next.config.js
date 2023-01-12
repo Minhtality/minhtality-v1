@@ -6,5 +6,6 @@ module.exports = withMDX({
     env: {
         TDA_CLIENT_ID: process.env.TDA_CLIENT_ID,
         TDA_REFRESH_TOKEN: process.env.TDA_REFRESH_TOKEN,
+        LOCAL_URL: process.env.LOCAL_URL,
     },
 });

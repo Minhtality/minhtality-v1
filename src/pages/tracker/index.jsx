@@ -23,26 +23,20 @@ const index = () => {
     };
 
     const getAccounts = async () => {
-        await fetch(
-            "https://api.tdameritrade.com/v1/accounts?fields=positions",
+        await fetch("https://api.tdameritrade.com/v1/accounts?fields=positions",
             {
                 headers: {
-                    Authorization: `Bearer ${localStorage.getItem(
-                        "accessToken"
-                    )}`,
+                    Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
                 },
             }
         )
-            .then((res) => {
-                if (
-                    res.status === 401 &&
-                    localStorage.getItem("refreshToken")
-                ) {
-                    setShowSync(true);
-                }
-                return res.json();
-            })
-            .then((data) => setAccount(data[0]?.securitiesAccount));
+        .then((res) => {
+            if (res.status === 401 && localStorage.getItem("refreshToken")) {
+                setShowSync(true);
+            }
+            return res.json();
+        })
+        .then((data) => setAccount(data[0]?.securitiesAccount));
     };
 
     const submithandler = (e) => {
