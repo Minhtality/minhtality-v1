@@ -23,20 +23,26 @@ const index = () => {
     };
 
     const getAccounts = async () => {
-        await fetch("https://api.tdameritrade.com/v1/accounts?fields=positions,orders",
+        await fetch(
+            "https://api.tdameritrade.com/v1/accounts?fields=positions,orders",
             {
                 headers: {
-                    Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+                    Authorization: `Bearer ${localStorage.getItem(
+                        "accessToken"
+                    )}`,
                 },
             }
         )
-        .then((res) => {
-            if (res.status === 401 && localStorage.getItem("refreshToken")) {
-                setShowSync(true);
-            }
-            return res.json();
-        })
-        .then((data) => setAccount(data[0]?.securitiesAccount));
+            .then((res) => {
+                if (
+                    res.status === 401 &&
+                    localStorage.getItem("refreshToken")
+                ) {
+                    setShowSync(true);
+                }
+                return res.json();
+            })
+            .then((data) => setAccount(data[0]?.securitiesAccount));
     };
 
     const submithandler = (e) => {
@@ -52,9 +58,9 @@ const index = () => {
             <form onSubmit={submithandler}>
                 <input type="text" placeholder="Enter Auth Code" />
             </form>
-            <div style={{display: 'flex'}}>
-                <pre>{JSON.stringify(account.positions, 0, 2)}</pre>
-                <pre>{JSON.stringify(account.orderStrategies, 0, 2)}</pre>
+            <div style={{ display: "flex" }}>
+                <pre>{JSON.stringify(account?.positions, 0, 2)}</pre>
+                <pre>{JSON.stringify(account?.orderStrategies, 0, 2)}</pre>
             </div>
             <button onClick={loginTD}>Auth</button>
             <button onClick={getAccounts}>Get Accounts</button>

@@ -11,8 +11,12 @@
 		"prettier-format": "prettier --config .prettierrc --write \"**/*.{js,jsx,ts,tsx,css,scss,md}\""
 	},
 	"dependencies": {
+		"@emotion/react": "^11.10.5",
+		"@emotion/styled": "^11.10.5",
 		"@knicola/tdameritrade": "^0.6.0",
 		"@mdx-js/loader": "^2.1.5",
+		"@mui/material": "^5.11.4",
+		"@mui/x-data-grid": "^5.17.18",
 		"@next/mdx": "^13.0.4",
 		"@types/jest": "^29.2.3",
 		"@types/node": "^18.11.9",
