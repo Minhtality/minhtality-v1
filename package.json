@@ -1,14 +1,17 @@
 {
-	"name": "learn-starter",
-	"version": "0.1.0",
-	"private": true,
+	"name": "minhtality-homepage",
+	"version": "1.0.0",
+	"author": "Minh Minh Tran<dev@minhtality.com>",
+	"description": "Minhtality's personal website",
+	"license": "MIT",
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"prettier-format": "prettier --config .prettierrc --write \"**/*.{js,jsx,ts,tsx,css,scss,md}\""
+		"prettier-format": "prettier --config .prettierrc --write \"**/*.{js,jsx,ts,tsx,css,scss,md}\"",
+		"lint": "next lint"
 	},
 	"dependencies": {
 		"@mdx-js/loader": "^2.1.5",
@@ -43,6 +46,8 @@
 		"@types/react": "^18.0.25",
 		"babel-loader": "^8.3.0",
 		"babel-plugin-styled-components": "^2.0.7",
+		"eslint": "^8.33.0",
+		"eslint-config-next": "^13.1.6",
 		"prettier": "^2.8.0"
 	}
 }
