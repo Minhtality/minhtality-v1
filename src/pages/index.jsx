@@ -84,7 +84,7 @@ const index = () => {
       <Section>
         <Container>
           <Avatar src="/images/avatar.jpeg" />
-          <Heading>Hello, I'm Minh</Heading>
+          <Heading>Hello, I&apos;m Minh</Heading>
           <Description>Front End Developer, Los Angeles</Description>
         </Container>
       </Section>
@@ -148,13 +148,25 @@ const index = () => {
         <Container>
           <SubHead>Contact Me</SubHead>
           <IconContainer>
-            <a href="https://github.com/Minhtality" target="_blank">
+            <a
+              href="https://github.com/Minhtality"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Icons.GithubIcon {...iconStyle} />
             </a>
-            <a href="https://www.linkedin.com/in/minh-m-tran/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/minh-m-tran/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Icons.LinkedInIcon {...iconStyle} />
             </a>
-            <a href="mailto:dev@minhtality.com" target="_blank">
+            <a
+              href="mailto:dev@minhtality.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Icons.GmailIcon {...iconStyle} />
             </a>
           </IconContainer>
