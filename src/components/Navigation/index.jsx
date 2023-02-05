@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { TabletBreakpoint, DesktopBreakpoint } from '@components/breakpoints'
 import Link from 'next/link'
 import * as Styled from './index.styled'
-import { motion } from 'framer-motion'
 
 const Navigation = ({ baseUrl = '/' }) => {
   const [isOpen, setOpen] = useState(false)
@@ -50,18 +49,19 @@ const Navigation = ({ baseUrl = '/' }) => {
           animate={isOpen ? 'open' : 'closed'}
           variants={variants}
           isOpen={isOpen}
+          aria-expanded={isOpen}
         >
           {isOpen && (
             <Styled.Overlay onClick={handleMenuClick}>
               <Styled.List>
                 <Styled.ListItem>
-                  <Link href="/photography">Photography</Link>
+                  <Link href="/">Photography (Under Construction)</Link>
                 </Styled.ListItem>
                 <Styled.ListItem>
-                  <Link href="/blogs">Blogs</Link>
+                  <Link href="/blogs">Blogs (Under Construction)</Link>
                 </Styled.ListItem>
                 <Styled.ListItem>
-                  <Link href="/resume">Resume</Link>
+                  <Link href="/">About (Under Construction)</Link>
                 </Styled.ListItem>
               </Styled.List>
             </Styled.Overlay>

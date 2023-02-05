@@ -69,6 +69,7 @@ const SkillList = styled.ul`
   }
   b {
     text-decoration: underline;
+    text-underline-offset: 3px;
   }
 `
 
