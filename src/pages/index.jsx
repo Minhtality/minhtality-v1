@@ -29,6 +29,8 @@ const Heading = styled.h1`
 `
 const SubHead = styled.h2`
   text-align: left;
+  text-underline-offset: 6px;
+  text-decoration: underline 4px rgb(82, 82, 82);
 `
 const ExperienceList = styled.ul`
   margin: 0;
