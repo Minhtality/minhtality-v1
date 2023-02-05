@@ -58,11 +58,11 @@ export const Hamburger = styled.div`
 export const AnimateDiv = styled(motion.div)`
   position: absolute;
   width: 100%;
-  height: ${({ isOpen }) => (isOpen ? '20vh' : '0')};
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 100;
   color: #000;
   border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.7);
 `
 
 export const Overlay = styled.div`
@@ -76,6 +76,7 @@ export const List = styled.ul`
   width: 100%;
   margin: 0 auto;
   padding-top: 25px;
+  font-size: 20px;
   a {
     color: inherit;
   }
@@ -83,15 +84,15 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   width: calc(100% - 200px);
-  height: 50px;
+  height: 75px;
   margin: 0 auto;
   cursor: pointer;
-
   a {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    text-decoration: none;
+    color: inherit;
   }
 `

@@ -17,8 +17,16 @@ const Navigation = ({ baseUrl = '/' }) => {
   }
 
   const variants = {
-    open: { opacity: 1, y: 0 },
-    closed: { opacity: 0, y: '-40%' }
+    open: {
+      opacity: 1,
+      height: isOpen ? '20vh' : 0,
+      y: 0
+    },
+    closed: {
+      opacity: 0,
+      height: 0,
+      y: '-40%'
+    }
   }
   const handleMenuClick = () => {
     setOpen(e => {
