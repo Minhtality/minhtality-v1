@@ -9,7 +9,7 @@ const Main = styled.main`
   padding: 0 20px 100px 20px;
 `
 const Section = styled.section`
-  padding-top: 25px;
+  padding-top: 50px;
 `
 const Container = styled.div`
   text-align: center;
