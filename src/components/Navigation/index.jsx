@@ -9,6 +9,23 @@ const Navigation = ({ baseUrl = '/' }) => {
   const [hasMounted, setHasMounted] = React.useState(false)
 
   React.useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    const handleEscape = e => {
+      if (e.key === 'Escape') {
+        setOpen(false)
+      }
+    }
+    document.addEventListener('keydown', handleEscape)
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [isOpen])
+
+  React.useEffect(() => {
     setHasMounted(true)
   }, [])
 
