@@ -1,28 +1,31 @@
-import styled from "styled-components";
+import styled from 'styled-components'
+import breakpoints from '@components/breakpoints'
+import { motion } from 'framer-motion'
 
 export const NavContainer = styled.nav`
   display: flex;
+  position: relative;
   justify-content: space-between;
-  padding: 50px 100px 50px 100px;
+  padding: 25px 100px;
   margin-left: auto;
   margin-right: auto;
   background: #fff;
-  border: 1px solid rgb(226,226,226);
+  border: 1px solid rgb(226, 226, 226);
   box-sizing: border-box;
-`;
+`
 
 export const Heading = styled.div`
-    font-size: 16px;
-    display: block;
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-`;
+  font-size: 16px;
+  display: block;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+`
 
 export const Menu = styled.div`
-    text-align: right;
-`;
+  text-align: right;
+`
 
 export const Hamburger = styled.div`
   display: block;
@@ -38,7 +41,9 @@ export const Hamburger = styled.div`
     border-radius: 1px;
   }
 
-  ${({isOpen}) => isOpen && `
+  ${({ isOpen }) =>
+    isOpen &&
+    `
   .bar1 {
       transform: translateY(5px)  rotateZ(45deg);
     }
@@ -49,4 +54,45 @@ export const Hamburger = styled.div`
       transform: translateY(-5px)  rotateZ(-45deg);
     }
   `}
-`;
+`
+export const AnimateDiv = styled(motion.div)`
+  position: absolute;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 100;
+  color: #000;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.7);
+`
+
+export const Overlay = styled.div`
+  height: 100vh;
+`
+
+export const List = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 25px;
+  font-size: 20px;
+  a {
+    color: inherit;
+  }
+`
+
+export const ListItem = styled.li`
+  width: calc(100% - 200px);
+  height: 75px;
+  margin: 0 auto;
+  cursor: pointer;
+  a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+`
