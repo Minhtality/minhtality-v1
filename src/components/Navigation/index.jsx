@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import * as Styled from './index.styled'
 import { TabletBreakpoint, DesktopBreakpoint } from '@components/breakpoints'
 import Link from 'next/link'
-import * as Styled from './index.styled'
+import Sticky from 'react-sticky-el'
 
 const Navigation = ({ baseUrl = '/' }) => {
   const [isOpen, setOpen] = useState(false)
@@ -18,7 +19,7 @@ const Navigation = ({ baseUrl = '/' }) => {
   const variants = {
     open: {
       opacity: 1,
-      height: isOpen ? '20vh' : 0,
+      height: isOpen ? '300px' : 0,
       y: 0
     },
     closed: {
@@ -35,7 +36,11 @@ const Navigation = ({ baseUrl = '/' }) => {
   }
 
   return (
-    <>
+    <Sticky
+      isIOSFixEnabled={false}
+      stickyStyle={{ zIndex: 5 }}
+      style={{ position: 'relative', zIndex: 4 }}
+    >
       <TabletBreakpoint down>
         <Styled.NavContainer>
           <Styled.Heading>
@@ -75,7 +80,7 @@ const Navigation = ({ baseUrl = '/' }) => {
           </Styled.Heading>
         </Styled.NavContainer>
       </DesktopBreakpoint>
-    </>
+    </Sticky>
   )
 }
 

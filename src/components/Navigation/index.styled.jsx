@@ -5,17 +5,23 @@ import { motion } from 'framer-motion'
 export const NavContainer = styled.nav`
   display: flex;
   position: relative;
+  width: 100%;
   justify-content: space-between;
   padding: 25px 100px;
   margin-left: auto;
   margin-right: auto;
-  background: #fff;
+  background: #ffffff50;
+  backdrop-filter: blur(10px);
   border: 1px solid rgb(226, 226, 226);
   box-sizing: border-box;
+
+  ${breakpoints('tablet', 'down')} {
+    padding: 25px 20px;
+  }
 `
 
 export const Heading = styled.div`
-  font-size: 16px;
+  font-size: 20px;
   display: block;
   a {
     text-decoration: none;
@@ -56,13 +62,14 @@ export const Hamburger = styled.div`
   `}
 `
 export const AnimateDiv = styled(motion.div)`
-  position: absolute;
+  position: relative;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
   z-index: 100;
   color: #000;
   border-radius: 0 0 10px 10px;
-  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.3);
 `
 
 export const Overlay = styled.div`
@@ -87,6 +94,11 @@ export const ListItem = styled.li`
   height: 75px;
   margin: 0 auto;
   cursor: pointer;
+
+  ${breakpoints('tablet', 'down')} {
+    width: calc(100% - 40px);
+  }
+
   a {
     width: 100%;
     height: 100%;
