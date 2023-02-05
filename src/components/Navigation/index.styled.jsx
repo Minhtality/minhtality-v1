@@ -59,9 +59,9 @@ export const AnimateDiv = styled(motion.div)`
   position: absolute;
   width: 100%;
   height: ${({ isOpen }) => (isOpen ? '20vh' : '0')};
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: 100;
-  color: #fff;
+  color: #000;
   border-radius: 0 0 10px 10px;
 `
 
