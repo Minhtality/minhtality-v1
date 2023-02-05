@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Image from 'next/image'
 import * as Styled from './index.styled'
 import { Arrow } from '../../../public/icons'
 import parse from 'html-react-parser'
@@ -39,7 +38,7 @@ const Accordion = ({
     <Styled.AccordionContainer aria-expanded={open}>
       <Styled.Accordion onClick={handleToggle}>
         <Styled.Icon href={href} target="_blank">
-          <Image alt="company-icon" src={imgSrc} width={100} height={100} />
+          <img alt="company-icon" src={imgSrc} />
         </Styled.Icon>
         <div>
           <Styled.Heading>{heading}</Styled.Heading>
