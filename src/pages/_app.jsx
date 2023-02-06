@@ -4,6 +4,10 @@ import { createGlobalStyle } from 'styled-components'
 import Navigation from '@components/Navigation'
 
 export const GlobalStyles = createGlobalStyle`
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+  }
   body {
     background: #f0e7db;
     color: #363537;

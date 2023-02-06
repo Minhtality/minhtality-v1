@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import * as Styled from './index.styled'
 import { Arrow } from '../../../public/icons'
 import parse from 'html-react-parser'
 import { AnimatePresence } from 'framer-motion'
+
 const Accordion = ({
   heading = 'default heading',
   description = 'default description',
@@ -12,9 +13,18 @@ const Accordion = ({
   ...props
 }) => {
   const [open, setOpen] = useState(false)
+  const contentRef = useRef(null)
 
   const handleToggle = event => {
     event.preventDefault()
+
+    setTimeout(() => {
+      contentRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      }, 1000)
+    })
+
     setOpen(prevState => {
       const newState = !prevState
       return newState
@@ -35,7 +45,7 @@ const Accordion = ({
   }
 
   return (
-    <Styled.AccordionContainer aria-expanded={open}>
+    <Styled.AccordionContainer ref={contentRef} aria-expanded={open}>
       <Styled.Accordion onClick={handleToggle}>
         <Styled.Icon href={href} target="_blank">
           <img alt="company-icon" src={imgSrc} />
