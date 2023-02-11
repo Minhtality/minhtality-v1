@@ -24,6 +24,7 @@
       "@pages/*": ["src/pages/*"],
       "@packages/*": ["src/packages/*"],
       "@apis/*": ["src/apis/*"],
+      "@hooks/*": ["src/hooks/*"],
     },
   },
   "include": [
