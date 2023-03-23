@@ -77,14 +77,14 @@ const Navigation = ({ baseUrl = '/' }) => {
             <Styled.Overlay onClick={handleMenuClick}>
               <Styled.List>
                 <Styled.ListItem>
-                  <Link href="/">Photography (Under Construction)</Link>
+                  <Link href="/">Home</Link>
                 </Styled.ListItem>
-                <Styled.ListItem>
+                {/* <Styled.ListItem>
                   <Link href="/blogs">Blogs (Under Construction)</Link>
                 </Styled.ListItem>
                 <Styled.ListItem>
                   <Link href="/">About (Under Construction)</Link>
-                </Styled.ListItem>
+                </Styled.ListItem> */}
               </Styled.List>
             </Styled.Overlay>
           )}

@@ -10,6 +10,7 @@ const Accordion = ({
   imgSrc = '',
   href = '',
   children,
+  type = '',
   ...props
 }) => {
   const [open, setOpen] = useState(false)
@@ -19,10 +20,13 @@ const Accordion = ({
     event.preventDefault()
 
     setTimeout(() => {
-      contentRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      }, 1000)
+      contentRef.current.scrollIntoView(
+        {
+          behavior: 'smooth',
+          block: 'start'
+        },
+        1000
+      )
     })
 
     setOpen(prevState => {

@@ -1,77 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import * as Icons from '../../public/icons'
 import Accordion from '../components/Accordion'
 import parse from 'html-react-parser'
-import styled from 'styled-components'
-import { accordionsMock, iconsMock } from '../components/_mocks'
-
-const Main = styled.main`
-  padding: 0 20px 100px 20px;
-`
-const Section = styled.section`
-  padding-top: 50px;
-`
-const Container = styled.div`
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto;
-`
-const Avatar = styled.img`
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  margin-bottom: 10px;
-`
-const Heading = styled.h1`
-  margin: 0;
-  margin-bottom: 10px;
-`
-const SubHead = styled.h2`
-  text-align: left;
-  text-underline-offset: 6px;
-  text-decoration: underline 4px rgb(82, 82, 82);
-`
-const ExperienceList = styled.ul`
-  margin: 0;
-  padding: 0;
-`
-const AccordionContent = styled.div`
-  border-bottom: 1px solid rgb(226, 226, 226);
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-  font-size: 14px;
-`
-
-const Description = styled.p`
-  margin: 0;
-`
-
-const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 640px;
-  svg {
-    margin: 0 20px;
-  }
-`
-
-const SkillList = styled.ul`
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  list-style: none;
-  text-align: left;
-  li {
-    margin: 0 0 10px 0;
-  }
-  b {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-`
+import Link from 'next/link'
+import { accordionsMock, projectsMock, iconsMock } from '../components/_mocks'
+import { AiOutlineGlobal, AiFillGithub } from 'react-icons/ai'
+import * as Styled from '@styles/homepage.styled'
 
 const index = () => {
   const iconStyle = {
@@ -79,19 +14,26 @@ const index = () => {
     height: '50px'
   }
 
+  const variant = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
+  }
+
   return (
-    <Main>
-      <Section>
-        <Container>
-          <Avatar src="/images/avatar.jpeg" />
-          <Heading>Hello, I&apos;m Minh</Heading>
-          <Description>Front End Developer, Los Angeles</Description>
-        </Container>
-      </Section>
-      <Section>
-        <Container>
-          <SubHead>Experience</SubHead>
-          <ExperienceList>
+    <Styled.Main>
+      <Styled.Section>
+        <Styled.Container>
+          <Styled.Avatar src="/images/avatar.jpeg" />
+          <Styled.Heading>Hello, I&apos;m Minh</Styled.Heading>
+          <Styled.Description>
+            Front End Developer, Los Angeles
+          </Styled.Description>
+        </Styled.Container>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.Container>
+          <Styled.SubHead>Experience</Styled.SubHead>
+          <Styled.ExperienceList>
             {accordionsMock.map(accordion => (
               <Accordion
                 key={`accordion: ${accordion.title}`}
@@ -100,27 +42,76 @@ const index = () => {
                 imgSrc={accordion.imageSrc}
                 href={accordion.href}
               >
-                <AccordionContent>{parse(accordion.content)}</AccordionContent>
+                <Styled.AccordionContent>
+                  {parse(accordion.content)}
+                </Styled.AccordionContent>
               </Accordion>
             ))}
-          </ExperienceList>
-        </Container>
-      </Section>
-      <Section>
-        <Container>
-          <SubHead>Technologies</SubHead>
-          <IconContainer>
+          </Styled.ExperienceList>
+        </Styled.Container>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.Container>
+          <Styled.SubHead>Projects</Styled.SubHead>
+          <Styled.ExperienceList>
+            <Styled.ProjectContainer
+              initial="hidden"
+              animate="visible"
+              variants={variant}
+              transition={{
+                staggerChildren: 0.2,
+                delayChildren: 0.2
+              }}
+            >
+              {projectsMock.map(project => (
+                <Styled.ProjectCard key={project.title} variants={variant}>
+                  <Styled.ImageContainer>
+                    <Styled.ProjectImage
+                      src={project.imageSrc}
+                      alt={project.title}
+                      fill
+                      sizes="100vw"
+                    />
+                    <Styled.ProjectSource>
+                      <Link
+                        href={'https://frontend-coffee.vercel.app/'}
+                        alt="good soup."
+                        target={'_blank'}
+                      >
+                        <AiOutlineGlobal />
+                      </Link>
+                      <Link
+                        href={'https://github.com/Minhtality/coffee'}
+                        alt="source code"
+                        target="_blank"
+                      >
+                        <AiFillGithub />
+                      </Link>
+                    </Styled.ProjectSource>
+                  </Styled.ImageContainer>
+                  <Styled.ProjectTitle>{project.title}</Styled.ProjectTitle>
+                  <p>{project.description}</p>
+                </Styled.ProjectCard>
+              ))}
+            </Styled.ProjectContainer>
+          </Styled.ExperienceList>
+        </Styled.Container>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.Container>
+          <Styled.SubHead>Technologies</Styled.SubHead>
+          <Styled.IconContainer>
             {iconsMock.map(icon => {
               const Icon = Icons[icon]
               return <Icon {...iconStyle} key={icon} />
             })}
-          </IconContainer>
-        </Container>
-      </Section>
-      <Section>
-        <Container>
-          <SubHead>Skills</SubHead>
-          <SkillList>
+          </Styled.IconContainer>
+        </Styled.Container>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.Container>
+          <Styled.SubHead>Skills</Styled.SubHead>
+          <Styled.SkillList>
             <li>
               <b>Languages:</b> JavaScript (ES6+), C#, Python, Ruby on Rails{' '}
             </li>
@@ -141,13 +132,13 @@ const index = () => {
             <li>
               <b>Testing:</b> Jest, Storyshot, React Testing Library
             </li>
-          </SkillList>
-        </Container>
-      </Section>
-      <Section>
-        <Container>
-          <SubHead>Contact Me</SubHead>
-          <IconContainer>
+          </Styled.SkillList>
+        </Styled.Container>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.Container>
+          <Styled.SubHead>Contact Me</Styled.SubHead>
+          <Styled.IconContainer>
             <a
               href="https://github.com/Minhtality"
               target="_blank"
@@ -169,10 +160,10 @@ const index = () => {
             >
               <Icons.GmailIcon {...iconStyle} />
             </a>
-          </IconContainer>
-        </Container>
-      </Section>
-    </Main>
+          </Styled.IconContainer>
+        </Styled.Container>
+      </Styled.Section>
+    </Styled.Main>
   )
 }
 

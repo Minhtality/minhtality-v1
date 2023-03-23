@@ -1,39 +1,43 @@
 export const iconsMock = [
-        "ReactIcon",
-        "CssIcon",
-        "HtmlIcon",
-        "StyledComPonentIcon",
-        "MaterialUiIcon",
-        "RubyIcon",
-        "NextJsIcon",
-    ];
+  'ReactIcon',
+  'CssIcon',
+  'HtmlIcon',
+  'StyledComPonentIcon',
+  'MaterialUiIcon',
+  'RubyIcon',
+  'NextJsIcon'
+]
 
 export const accordionsMock = [
-    {
-        imageSrc: "/images/ng.png",
-        fallBackImageSrc: "/images/ng.png",
-        title: "Northrop Grumman",
-        href: "https://www.northropgrumman.com/",
-        description: "Oct 2022 - Present",
-        content: `
+  {
+    imageSrc: '/images/ng.png',
+    fallBackImageSrc: '/images/ng.png',
+    title: 'Northrop Grumman',
+    href: 'https://www.northropgrumman.com/',
+    description: 'Oct 2022 - Present',
+    content: `
             <h4>Design System for USAF and USN</h4>
-            <p>Currently collaborating with System Designers to create a unified solution to streamline style guide updates and interactive component documentation via Storybook.</p>
+            <br />
+            <p>Improve consistency and streamline the front-end development process by utilizing Storybook to create a design system that encompasses snapshots and accessibility guidelines, catering to both designers and front-end developers.</p>
+            <br />
             <p>Technologies and skills:
                 <ul>
                     <li>Material-UI, ReactJS, Web Designs, User Interface Design, User Experience (UX), Accessibility, devops</li>
                 </ul>
             </p>
-        `,
-    },
-    {
-        imageSrc: "/images/ll.png",
-        fallBackImageSrc: "/images/ll.png",
-        title: "Lemonlight Media",
-        href: "https://www.lemonlight.com/",
-        description: "April 2022 - Oct 2022",
-        content: `
+        `
+  },
+  {
+    imageSrc: '/images/ll.png',
+    fallBackImageSrc: '/images/ll.png',
+    title: 'Lemonlight Media',
+    href: 'https://www.lemonlight.com/',
+    description: 'April 2022 - Oct 2022',
+    content: `
             <h4>Internal Portal Tool for Sales Team to Manage Clients' Projects</h4>
-            <p>I'm currently working on a tool that allows the sales team to manage their clients' projects. The tool is built with <a target="_blank" href="https://reactjs.org/">ReactJS</a>, <a href="https://rubyonrails.org/" target="_blank">Ruby on Rails</a>, <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>, and <a href="https://mui.com/" target="_blank">Material-ui</a>.</p>
+            <br />
+            <p>I developed an internal platform that facilitates efficient project and sales management for the sales team. This platform enables them to oversee their clients' projects, track the progress of video production from the draft stage to the final product, and manage project timelines effectively. The tool is built with <a target="_blank" href="https://reactjs.org/">ReactJS</a>, <a href="https://rubyonrails.org/" target="_blank">Ruby on Rails</a>, <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>, and <a href="https://mui.com/" target="_blank">Material-ui</a>.</p>
+            <br />
             <p>Some of the features I've worked on include:
                 <ul>
                     <li>Built and implemented multi-factor authentication with Twilio and Google Authenticator for the new user onboarding process.</li>
@@ -42,14 +46,14 @@ export const accordionsMock = [
                     <li>An internal email signature generator, enables the HR team to build dynamic signatures during the onboarding process.</li>
                 </ul>
             </p>
-        `,
-    },
-    {
-        imageSrc: "/images/t1.png",
-        href: "https://www.teamone-usa.com/",
-        title: "Team One",
-        description: "Dec 2019 - Apr 2022",
-        content: `
+        `
+  },
+  {
+    imageSrc: '/images/t1.png',
+    href: 'https://www.teamone-usa.com/',
+    title: 'Team One',
+    description: 'Dec 2019 - Apr 2022',
+    content: `
 
             <h4>Lexus.com - Model Page Redesign | Front-End Developer</h4>
             <p><i>Dec 2019 - Mar 2020</i></p>
@@ -95,7 +99,17 @@ export const accordionsMock = [
                 <li>Kickoff <a target="_blank" href="https://drivers.lexus.com/lexusdrivers">Lexus Drivers</a> site migration to utilize the platform's reusable components.</li>
                 <li>Built on top of most current global navigation component to support the new variation of the Drivers site that requires authentication.</li>
             </ul>
-        `,
-    },
-   
-];
+        `
+  }
+]
+
+export const projectsMock = [
+  {
+    imageSrc: '/images/homepage.png',
+    fallBackImageSrc: '/images/homepage.png',
+    title: 'Good Soup.',
+    href: 'https://frontend-coffee.vercel.app/',
+    description:
+      'A simple, clean, and responsive website for a fictional home coffee shop for friends and family. Accepts orders and payments. Fully responsive and mobile friendly. Integrated with Strapi for content management.'
+  }
+]
