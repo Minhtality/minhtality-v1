@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
   }
-  h4, h5, h6 {
+  p, h4, h5, h6 {
     margin: 0;
   }
   a {
