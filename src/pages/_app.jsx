@@ -41,11 +41,11 @@ export default function App({ Component, pageProps }) {
         <title>Minhtality</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <>
         <Navigation />
         <GlobalStyles />
         <Component {...pageProps} />
-      </div>
+      </>
     </>
   )
 }
