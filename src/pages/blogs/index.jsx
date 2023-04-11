@@ -11,6 +11,8 @@ export const index = ({ posts }) => {
     <Styled.BlogContainer>
       {posts.map((post, index) => (
         <Styled.BlogCardWrapper href={`/blogs/${post.slug}`} key={index}>
+          <h1>{post.frontmatter.title}</h1>
+
           {/* <Card
                         key={index}
                         title={post.frontmatter.title}
@@ -21,9 +23,9 @@ export const index = ({ posts }) => {
                     /> */}
 
           <Styled.Overlay>
-            <h1>{post.frontmatter.title}</h1>
-            <p>{post.frontmatter.author}</p>
-            <p>{post.frontmatter.date}</p>
+            <p>
+              {post.frontmatter.author} - {post.frontmatter.date}
+            </p>
           </Styled.Overlay>
           {/* <p>{post.frontmatter.tags}</p> */}
           {/* eslint-disable-next-line @next/next/no-img-element */}

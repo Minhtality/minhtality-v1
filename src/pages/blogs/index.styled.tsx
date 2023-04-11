@@ -17,10 +17,12 @@ export const BlogContainer = styled.div`
 export const BlogCardWrapper = styled(Link)`
   color: inherit;
   text-decoration: none;
-  width: 50%;
+  width: calc(50% - 20px);
   height: 600px;
   position: relative;
-  /* margin: 20px 10px; */
+  margin: 20px 10px;
+  border-radius: 5px;
+  overflow: hidden;
 
   img {
     width: 100%;
@@ -37,4 +39,12 @@ export const Overlay = styled.div`
   width: 100%;
   font-size: 12px;
   backdrop-filter: blur(10px);
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: height 0.2s ease-in-out;
+  ${BlogCardWrapper}:hover & {
+    height: 60px;
+  }
 `
