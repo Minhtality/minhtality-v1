@@ -4,30 +4,45 @@ import Link from 'next/link'
 
 export const BlogContainer = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  width: calc(100% - 200px);
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
   ${breakpoints('desktop', 'up')} {
     flex-direction: row;
     padding: 0 100px;
+    justify-content: flex-start;
+    width: calc(100% - 200px);
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
   }
 `
 export const BlogCardWrapper = styled(Link)`
   color: inherit;
   text-decoration: none;
-  width: calc(50% - 20px);
   height: 600px;
   position: relative;
-  margin: 20px 10px;
   border-radius: 5px;
   overflow: hidden;
-
+  width: calc(100% - 40px);
+  margin: 0 20px 10px 20px;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 5px;
+  }
+
+  ${breakpoints('desktop', 'up')} {
+    width: calc(50% - 20px);
+    margin: 20px 10px;
   }
 `
 
