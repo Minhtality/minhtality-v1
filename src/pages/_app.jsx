@@ -10,14 +10,17 @@ export const GlobalStyles = createGlobalStyle`
   }
   body {
     background: #f0e7db;
-    color: #363537;
+    color: rgb(127, 0, 25);
     transition: all 0.25s linear;
     padding: 0;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Montserrat", sans-serif;
     overflow-x: hidden;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
+  }
+  h1, h2, h3 {
+    text-decoration-color: rgb(127, 0, 25);
   }
   p, h4, h5, h6 {
     margin: 0;
@@ -41,11 +44,11 @@ export default function App({ Component, pageProps }) {
         <title>Minhtality</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <>
         <Navigation />
         <GlobalStyles />
         <Component {...pageProps} />
-      </div>
+      </>
     </>
   )
 }

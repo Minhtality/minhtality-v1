@@ -12,7 +12,7 @@ export const Card = styled.div`
   cursor: pointer;
   text-decoration: none;
   color: #333;
-  font-family: 'Cedarville Cursive', cursive;
+  font-family: 'Montserrat', sans-serif;
   margin: 20px;
   p {
     margin: 0;

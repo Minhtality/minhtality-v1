@@ -1676,10 +1676,17 @@
   dependencies:
     is-promise "^4.0.0"
 
-"@netlify/ipx@^1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@netlify/ipx/-/ipx-1.3.3.tgz#db28352ee1ed86d0b991cb8236f64a4dfbe70b8c"
-  integrity sha512-2rDdCGPDPW7cyJr57rwfvpouOJx34CLDgfa2yfqTKvPzqCMOqkCi1PN/rHGuvJ/k5trZ8rxmWnnZyEbeQaZcqA==
+"@netlify/functions@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-1.6.0.tgz#c373423e6fef0e6f7422ac0345e8bbf2cb692366"
+  integrity sha512-6G92AlcpFrQG72XU8YH8pg94eDnq7+Q0YJhb8x4qNpdGsvuzvrfHWBmqFGp/Yshmv4wex9lpsTRZOocdrA2erQ==
+  dependencies:
+    is-promise "^4.0.0"
+
+"@netlify/ipx@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@netlify/ipx/-/ipx-1.4.0.tgz#8bc77ef84f36a0cfead3ab49f68e8126c474edd9"
+  integrity sha512-Ibqg1W41EVMHNT/W6JSDUyxjhcxsbEL9vL9ZaNjn9tVKnDYxJ8JqRTwSbzfns+K+M3FLqoC4PLW32qW+vT1pKQ==
   dependencies:
     "@netlify/functions" "^1.4.0"
     etag "^1.8.1"
@@ -1692,16 +1699,17 @@
     ufo "^1.0.0"
     unstorage "^1.0.0"
 
-"@netlify/plugin-nextjs@^4.30.3":
-  version "4.30.3"
-  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-4.30.3.tgz#2cde50132f5751b3b3ef6f0cf4015567a496822b"
-  integrity sha512-3dUQd9qbjoqvQLSR7Uq3KwHQb/ffiJwLYvr0fap5kPpnRzKl4NPPMJjkOruIshBAMnRieqsJnZAOvIQpDH7Yvg==
+"@netlify/plugin-nextjs@^4.37.1":
+  version "4.37.1"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-4.37.1.tgz#6dec91de0d2146331cee2263f754b7aa4edbfc41"
+  integrity sha512-I2lIShQb9CiIBjGMihY9GMNDwoi2YMCtuq1ncUsePInIsIMazH3Z1b1TdQQnJ3d5KPt07hw1LvO6mOlpqy2F4w==
   dependencies:
     "@netlify/esbuild" "0.14.39"
-    "@netlify/functions" "^1.4.0"
-    "@netlify/ipx" "^1.3.3"
+    "@netlify/functions" "^1.6.0"
+    "@netlify/ipx" "^1.4.0"
     "@vercel/node-bridge" "^2.1.0"
     chalk "^4.1.2"
+    chokidar "^3.5.3"
     destr "^1.1.1"
     execa "^5.1.1"
     follow-redirects "^1.15.2"

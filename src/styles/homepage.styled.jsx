@@ -26,7 +26,7 @@ export const Heading = styled.h1`
 export const SubHead = styled.h2`
   text-align: left;
   text-underline-offset: 6px;
-  text-decoration: underline 4px rgb(82, 82, 82);
+  text-decoration: underline 4px rgb(127, 0, 25);
 `
 export const ExperienceList = styled.ul`
   margin: 0;
@@ -51,6 +51,7 @@ export const IconContainer = styled.div`
   max-width: 640px;
   svg {
     margin: 0 20px;
+    fill: rgb(127, 0, 25);
   }
 `
 

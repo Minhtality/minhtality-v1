@@ -48,6 +48,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap"
             rel="stylesheet"
           ></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;1,100;1,300&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
           <Main />

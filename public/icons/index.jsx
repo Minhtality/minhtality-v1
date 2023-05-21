@@ -33,7 +33,6 @@ export const LightIcon = ({ title = 'Light Icon', ...props }) => (
     {...props}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    fill="none"
     stroke="currentColor"
     strokeWidth="2"
     strokeLinecap="round"
@@ -102,7 +101,6 @@ export const StyledComPonentIcon = ({
         fill="#4a4a4a"
       />
       <text
-        fill="#000"
         fontFamily="AppleColorEmoji, Apple Color Emoji"
         fontSize="100"
         letterSpacing=".5"
