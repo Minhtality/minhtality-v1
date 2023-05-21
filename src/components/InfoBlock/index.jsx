@@ -6,7 +6,7 @@ const InfoBlock = ({ title, children }) => {
   return (
     <Styled.InfoContainer>
       <Styled.IconContainer>
-        <BsInfoCircle fill="#6c504d" />
+        <BsInfoCircle />
       </Styled.IconContainer>
       <Styled.Content>
         <strong>{title}</strong>

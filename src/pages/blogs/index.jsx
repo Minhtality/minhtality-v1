@@ -2,8 +2,6 @@ import React from 'react'
 import fs from 'fs'
 import * as path from 'path'
 import matter from 'gray-matter'
-import Link from 'next/link'
-import Card from '../../components/Card'
 import * as Styled from './index.styled'
 
 export const index = ({ posts }) => {

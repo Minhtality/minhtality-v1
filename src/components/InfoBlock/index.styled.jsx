@@ -6,7 +6,7 @@ export const InfoContainer = styled.aside`
   margin: 50px 0;
   background-color: rgb(199, 177, 166);
   border-radius: 5px;
-  border-left: 4px solid #6c504d;
+  border-left: 3px solid #6c504d;
   position: relative;
 
   p {
@@ -29,6 +29,7 @@ export const IconContainer = styled.div`
   svg {
     width: 30px;
     height: 30px;
+    fill: #6c504d;
   }
 `
 export const Content = styled.div`

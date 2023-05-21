@@ -26,7 +26,7 @@ const index = () => {
           <Styled.Avatar src="/images/avatar.jpeg" />
           <Styled.Heading>Hello, I&apos;m Minh</Styled.Heading>
           <Styled.Description>
-            Front End Developer, Los Angeles
+            Full Stack Developer, Los Angeles
           </Styled.Description>
         </Styled.Container>
       </Styled.Section>
