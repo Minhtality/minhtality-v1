@@ -2,7 +2,7 @@ import React from 'react'
 import fs from 'fs'
 import * as path from 'path'
 import matter from 'gray-matter'
-import * as Styled from './index.styled'
+import * as Styled from '@styles/blogs.styled'
 
 export const index = ({ posts }) => {
   return (
