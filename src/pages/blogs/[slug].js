@@ -5,12 +5,22 @@ import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import SyntaxHighlighter from 'react-syntax-highlighter'
+import { monokai } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 import InfoBlock from '@components/InfoBlock'
 import BlogsLayout from '@components/Layout/Blogs'
 
-const components = { SyntaxHighlighter, InfoBlock }
+const components = {
+  InfoBlock,
+  SyntaxHighlighter: ({ children }) => {
+    return (
+      <SyntaxHighlighter language="javascript" style={monokai}>
+        {children}
+      </SyntaxHighlighter>
+    )
+  }
+}
 
-const PostPage = ({ frontmatter, mdxSource }) => {
+const PostPage = ({ mdxSource }) => {
   return (
     <BlogsLayout>
       <MDXRemote {...mdxSource} components={components} />
