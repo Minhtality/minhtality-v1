@@ -61,7 +61,7 @@ const Navigation = ({ baseUrl = '/' }) => {
       <TabletBreakpoint down>
         <Styled.NavContainer>
           <Styled.Heading>
-            <Link href={baseUrl}>Minh M Trần</Link>
+            <Link href={baseUrl}>Minh Trần</Link>
           </Styled.Heading>
           <Styled.Menu onClick={handleMenuClick}>
             <HamburgerIcon isOpen={isOpen} />
@@ -93,7 +93,7 @@ const Navigation = ({ baseUrl = '/' }) => {
       <DesktopBreakpoint up>
         <Styled.NavContainer>
           <Styled.Heading>
-            <Link href={baseUrl}>Minh M Trần</Link>
+            <Link href={baseUrl}>Minh Trần</Link>
           </Styled.Heading>
         </Styled.NavContainer>
       </DesktopBreakpoint>
