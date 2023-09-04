@@ -1,0 +1,295 @@
+---
+title: 'Simplify Your React Components with a Unified State Object'
+author: 'Minh Tran'
+date: '09/04/2021'
+thumbnail: './images/blogs/idea.jpg'
+tags: ['ReactJS', 'blog', 'hooks', 'useState', 'formik']
+---
+
+# Simplify Your React Components with a Unified State Object
+
+## Introduction
+Managing state in React components is a fundamental aspect of building dynamic user interfaces. However, as components grow in complexity, managing multiple state variables with separate useState hooks can become cumbersome. 
+In this blog post, we'll explore a more organized and efficient approach to state management by using a unified state object. This approach simplifies your React components and enhances their maintainability.
+
+
+<InfoBlock title="The Problem">
+   When building a React component, you often need to manage multiple state variables. For example, a form component might need to manage the following state variables:
+    - `firstName`
+    - `lastName`
+    - `email`
+    - `password`
+    - `confirmPassword`
+    - `isSubmitting`
+    - `isSubmitted`
+    - `error`
+</InfoBlock>
+
+To manage these state variables, you might use the following code:
+
+<SyntaxHighlighter language="javascript" >
+{`
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [error, setError] = useState('');
+`}
+</SyntaxHighlighter>
+
+In JSX code, you might use the following code to render the form:
+
+<SyntaxHighlighter language="jsx" >
+{`
+    const handleFirstNameChange = e => {
+        setFirstName(e.target.value);
+    };
+
+    const handleLastNameChange = e => {
+        setLastName(e.target.value);
+    };
+
+    const handleEmailChange = e => {
+        setEmail(e.target.value);
+    };
+
+    const handlePasswordChange = e => {
+        setPassword(e.target.value);
+    };
+
+    const handleConfirmPasswordChange = e => {
+        setConfirmPassword(e.target.value);
+    };
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setIsSubmitted(true);
+    };
+return (
+    <form>
+        <input
+            type="text"
+            name="firstName"
+            value={firstName}
+            onChange={handleFirstNameChange}
+        />
+        <input
+            type="text"
+            name="lastName"
+            value={lastName}
+            onChange={handleLastNameChange}
+        />
+        <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
+        />
+        <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePasswordChange}
+        />
+        <input
+            type="password"
+            name="confirmPassword"
+            value={confirmPassword}
+            onChange={handleConfirmPasswordChange}
+        />
+        <button type="submit">Submit</button>
+    </form>
+);
+`}
+</SyntaxHighlighter>
+
+This approach requires a lot of duplicated code. It also makes it difficult to keep track of all the state variables. 
+
+## The Solution
+    To solve this problem, we can use a unified state object. This object contains all the state variables that we need to manage in our component. 
+    We can then use the useState hook to create a single state variable that contains all the state variables in our unified state object. 
+    This approach simplifies our code and makes it easier to keep track of all the state variables.
+
+<SyntaxHighlighter language="javascript" >
+{`
+    const [state, setState] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        isSubmitting: false,
+        isSubmitted: false,
+        error: ''
+    });
+`}
+</SyntaxHighlighter>
+
+In JSX code, we can use the following code to render the form:
+
+<SyntaxHighlighter language="jsx" >
+{`
+    const handleChange = e => {
+        setState({
+            ...state,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        setState({
+            ...state,
+            isSubmitting: true,
+            isSubmitted: true
+        });
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                name="firstName"
+                value={state.firstName}
+                onChange={handleChange}
+            />
+            <input
+                type="text"
+                name="lastName"
+                value={state.lastName}
+                onChange={handleChange}
+            />
+            <input
+                type="email"
+                name="email"
+                value={state.email}
+                onChange={handleChange}
+            />
+            <input
+                type="password"
+                name="password"
+                value={state.password}
+                onChange={handleChange}
+            />
+            <input
+                type="password"
+                name="confirmPassword"
+                value={state.confirmPassword}
+                onChange={handleChange}
+            />
+            <button type="submit">Submit</button>
+        </form>
+    );
+`}
+</SyntaxHighlighter>
+
+## Additional Libary
+    If you want to take this approach to the next level, you can use a library like [Formik](https://formik.org/docs/tutorial) to manage your form state. 
+    Formik provides a unified state object that contains all the state variables that you need to manage in your form component. 
+    It also provides a set of helper functions that make it easy to manage your form state and validate your form data.
+
+<SyntaxHighlighter language="javascript" >
+
+{`
+import { useFormik } from 'formik';
+
+const formik = useFormik({
+    initialValues: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+    },
+    onSubmit: values => {
+        alert(JSON.stringify(values, null, 2));
+    },
+    validate: values => {
+        const errors = {};
+
+        if (!values.firstName) {
+            errors.firstName = 'Required';
+        }
+
+        if (!values.lastName) {
+            errors.lastName = 'Required';
+        }
+
+        if (!values.email) {
+            errors.email = 'Required';
+        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+            errors.email = 'Invalid email address';
+        }
+
+        if (!values.password) {
+            errors.password = 'Required';
+        } else if (values.password.length < 8) {
+            errors.password = 'Must be 8 characters or more';
+        }
+
+        if (!values.confirmPassword) {
+            errors.confirmPassword = 'Required';
+        } else if (values.confirmPassword !== values.password) {
+            errors.confirmPassword = 'Passwords must match';
+        }
+
+        return errors;
+    }
+});
+
+return (
+    <form onSubmit={formik.handleSubmit}>
+        <input
+            type="text"
+            name="firstName"
+            value={formik.values.firstName}
+            onChange={formik.handleChange}
+        />
+        {formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
+        <input
+            type="text"
+            name="lastName"
+            value={formik.values.lastName}
+            onChange={formik.handleChange}
+        />
+        {formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
+        <input
+            type="email"
+            name="email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+        />
+        {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+        <input
+            type="password"
+            name="password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+        />
+        {formik.errors.password ? <div>{formik.errors.password}</div> : null}
+        <input
+            type="password"
+            name="confirmPassword"
+            value={formik.values.confirmPassword}
+            onChange={formik.handleChange}
+        />
+        {formik.errors.confirmPassword ? <div>{formik.errors.confirmPassword}</div> : null}
+        <button type="submit">Submit</button>
+    </form>
+);
+`}
+</SyntaxHighlighter>
+
+## Conclusion
+    In this article, we learned how to use a unified state object to manage the state of a form component. 
+    We also learned how to use the useState hook to create a single state variable that contains all the state variables in our unified state object. 
+    This approach simplifies our code and makes it easier to keep track of all the state variables. 
+    We also learned how to use a library like Formik to manage our form state. 
+    Formik provides a unified state object that contains all the state variables that we need to manage in our form component.
+
+
+

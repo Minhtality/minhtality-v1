@@ -7,19 +7,24 @@ import * as Styled from '@styles/blogs.styled'
 export const index = ({ posts }) => {
   return (
     <Styled.BlogContainer>
-      {posts.map((post, index) => (
-        <Styled.BlogCardWrapper href={`/blogs/${post.slug}`} key={index}>
-          <h2>{post.frontmatter.title}</h2>
+      {posts
+        .sort(
+          (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+        )
+        .map((post, index) => (
+          <Styled.BlogCardWrapper href={`/blogs/${post.slug}`} key={index}>
+            <h2>{post.frontmatter.title}</h2>
 
-          <Styled.Overlay>
-            <p>
-              {post.frontmatter.author} - {post.frontmatter.date}
-            </p>
-          </Styled.Overlay>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={post.frontmatter.thumbnail} alt="thumbnail" />
-        </Styled.BlogCardWrapper>
-      ))}
+            <Styled.Overlay>
+              <p>
+                {post.frontmatter.author} - {post.frontmatter.date}
+              </p>
+            </Styled.Overlay>
+
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={post.frontmatter.thumbnail} alt="thumbnail" />
+          </Styled.BlogCardWrapper>
+        ))}
     </Styled.BlogContainer>
   )
 }

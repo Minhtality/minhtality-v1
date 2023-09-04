@@ -9,7 +9,7 @@ const InfoBlock = ({ title, children }) => {
         <BsInfoCircle />
       </Styled.IconContainer>
       <Styled.Content>
-        <strong>{title}</strong>
+        <h2>{title}</h2>
         {children}
       </Styled.Content>
     </Styled.InfoContainer>

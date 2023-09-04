@@ -26,7 +26,8 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
   a {
-    text-decoration: none;
+    text-decoration: underline;
+    color: inherit;
   }
   body::-webkit-scrollbar {
     display: none;
