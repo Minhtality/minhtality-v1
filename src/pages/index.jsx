@@ -123,7 +123,7 @@ const index = () => {
               Material UI, Storybook
             </li>
             <li>
-              <b>Tools:</b>Kubernetes, Git, GitHub, GitLab, Jira, Confluence,
+              <b>Tools:</b> Kubernetes, Git, GitHub, GitLab, Jira, Confluence,
               Trello, Figma, Adobe XD, Adobe Photoshop
             </li>
             <li>
