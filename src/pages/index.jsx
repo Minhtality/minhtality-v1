@@ -26,7 +26,7 @@ const index = () => {
           <Styled.Avatar src="/images/avatar.jpeg" />
           <Styled.Heading>Hello, I&apos;m Minh</Styled.Heading>
           <Styled.Description>
-            Full Stack Developer, Los Angeles
+            Front End Developer, Los Angeles
           </Styled.Description>
         </Styled.Container>
       </Styled.Section>
@@ -123,8 +123,8 @@ const index = () => {
               Material UI, Storybook
             </li>
             <li>
-              <b>Tools:</b> Git, GitHub, GitLab, Jira, Confluence, Trello,
-              Figma, Adobe XD, Adobe Photoshop
+              <b>Tools:</b>Kubernetes, Git, GitHub, GitLab, Jira, Confluence,
+              Trello, Figma, Adobe XD, Adobe Photoshop
             </li>
             <li>
               <b>Database:</b> PostgreSQL, SQL, MongoDB
