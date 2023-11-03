@@ -4,6 +4,17 @@ import { Arrow } from '../../../public/icons'
 import parse from 'html-react-parser'
 import { AnimatePresence } from 'framer-motion'
 
+interface AccordionProps {
+  heading?: string
+  description?: string
+  imgSrc?: string
+  href?: string
+  children?: any
+  type?: string
+  content?: string
+  show?: boolean
+}
+
 const Accordion = ({
   heading = 'default heading',
   description = 'default description',
@@ -12,7 +23,7 @@ const Accordion = ({
   children,
   type = '',
   ...props
-}) => {
+}: AccordionProps) => {
   const [open, setOpen] = useState(false)
   const contentRef = useRef(null)
 
@@ -29,10 +40,7 @@ const Accordion = ({
       )
     })
 
-    setOpen(prevState => {
-      const newState = !prevState
-      return newState
-    })
+    setOpen(prevState => !prevState)
   }
 
   const variants = {
@@ -58,6 +66,7 @@ const Accordion = ({
           <Styled.Heading>{heading}</Styled.Heading>
           <Styled.Description>{description}</Styled.Description>
         </div>
+        {/* @ts-ignore */}
         <Styled.Close show={open}>
           <Arrow />
         </Styled.Close>

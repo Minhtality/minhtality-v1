@@ -69,20 +69,17 @@ const index = () => {
                     <Styled.ProjectImage
                       src={project.imageSrc}
                       alt={project.title}
-                      fill
                       sizes="100vw"
                     />
                     <Styled.ProjectSource>
                       <Link
                         href={'https://frontend-coffee.vercel.app/'}
-                        alt="good soup."
                         target={'_blank'}
                       >
                         <AiOutlineGlobal />
                       </Link>
                       <Link
                         href={'https://github.com/Minhtality/coffee'}
-                        alt="source code"
                         target="_blank"
                       >
                         <AiFillGithub />
