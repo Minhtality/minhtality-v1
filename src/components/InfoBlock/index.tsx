@@ -2,7 +2,12 @@ import React from 'react'
 import { BsInfoCircle } from 'react-icons/bs'
 import * as Styled from './index.styled'
 
-const InfoBlock = ({ title, children }) => {
+interface InfoBlockProps {
+  title: string
+  children: any
+}
+
+const InfoBlock = ({ title, children }: InfoBlockProps) => {
   return (
     <Styled.InfoContainer>
       <Styled.IconContainer>
