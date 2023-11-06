@@ -66,7 +66,6 @@ const Accordion = ({
           <Styled.Heading>{heading}</Styled.Heading>
           <Styled.Description>{description}</Styled.Description>
         </div>
-        {/* @ts-ignore */}
         <Styled.Close show={open}>
           <Arrow />
         </Styled.Close>
