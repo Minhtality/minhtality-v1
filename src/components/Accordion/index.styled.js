@@ -35,7 +35,7 @@ export const Icon = styled.a`
     object-fit: contain;
   }
 `
-export const Close = styled.button<{ show: boolean }>`
+export const Close = styled.button`
   margin-left: auto;
   padding: 0;
   width: 20px;

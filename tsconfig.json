@@ -16,6 +16,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "react": ["./node_modules/@types/react"],
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
       "@packages/*": ["src/packages/*"],
