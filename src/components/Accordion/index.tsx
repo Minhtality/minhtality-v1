@@ -9,13 +9,21 @@ interface AccordionProps {
   description?: string
   imgSrc?: string
   href?: string
-  children?: any[]
+  children?: any
   type?: string
   content?: string
+  show?: boolean
 }
 
-const Accordion: React.FC<AccordionProps> = props => {
-  const { heading, description, imgSrc, href, children } = props
+const Accordion = ({
+  heading = 'default heading',
+  description = 'default description',
+  imgSrc = '',
+  href = '',
+  children,
+  type = '',
+  ...props
+}: AccordionProps) => {
   const [open, setOpen] = useState(false)
   const contentRef = useRef(null)
 
